@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue">#BFADDDCE</color>
+    <color name="turquoise">#70AE98</color>
+    <color name="mustard_yellow">#E6B655</color>
+    <color name="peach_orange">#BFDF1F23</color>
+    <color name="orange">#DF1F23</color>
+    <color name="plum_pink">#CA7E8D</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="light_green">#7DE393</color>
+    <color name="green">#30CE88</color>
+    <color name="light_blue">#BF27A09E</color>
+    <color name="navy_blue">#205374</color>
+    <color name="transparent_green">#D3F5CE</color>
+    <color name="green_opacity">#BF7DE393</color>
+    <color name="black">#000000</color>
+    <color name="grey">#666666</color>
+
+
+    <color name="beige">#F3E0C2</color>
+    <color name="brown_beige">#A75E2F</color>
+
+    <color name="purple">#3E2569</color>
+    <color name="dark_blue">#090625</color>
+    <color name="dark_blue_opacity">#BF090625</color>
+    <color name="dark_blue_opacity_2">#00090625</color>
+    <color name="blue_toolbar">#BF032D5D</color>
+    <color name="pink_purple">#95426C</color>
+    <color name="pink">#DA336f</color>
+    <color name="light_beige">#F3C191</color>
+    <color name="royal_blue">#BF1E4C97</color>
+    <color name="rose_beige">#F09479</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_white">#BFFFFFFF</color>
+
+</resources>

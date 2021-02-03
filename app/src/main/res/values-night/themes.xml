@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.DailyNotDilly" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/beige</item>
+        <item name="colorPrimaryVariant">@color/brown_beige</item>
+        <item name="colorOnPrimary">@color/light_blue</item>
+        <item name="colorPrimaryDark">@color/turquoise</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/plum_pink</item>
+        <item name="colorSecondaryVariant">@color/peach_orange</item>
+        <item name="colorOnSecondary">@color/mustard_yellow</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/beige</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>

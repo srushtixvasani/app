@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foregroundGravity="center">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/message_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:padding="20dp"
+            android:layout_marginTop="490dp"
+            android:text="@string/seize_the_day"
+            android:textColor="@color/black"
+            android:textSize="25sp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/date_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="@string/date"
+            android:textColor="@color/green"
+            android:textSize="30sp"
+            />
+
+<!--        <TextClock-->
+<!--            android:id="@+id/text_clock"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:padding="10dp"-->
+<!--            android:textSize="30sp"-->
+<!--            android:textColor="@color/light_blue"-->
+<!--            android:fontFamily="sans-serif-medium"-->
+<!--            android:layout_marginTop="80dp">-->
+<!--        </TextClock>-->
+
+
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="110dp"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/transparent_green"
+                app:cardCornerRadius="60dp"
+                app:cardElevation="5dp"
+                app:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/quotes_textview"
+                    android:layout_width="310dp"
+                    android:layout_height="250dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/light_blue"
+                    android:textAlignment="inherit"
+                    android:textSize="25sp">
+                </TextView>
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="10dp"
+                        android:layout_marginRight="30dp"
+                        app:cardElevation="5dp"
+                        app:cardCornerRadius="25dp"
+                        app:layout_gravity="start">
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/back_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@color/green"
+                            android:contentDescription="@string/button"
+                            android:paddingStart="12dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_back">
+                        </androidx.appcompat.widget.AppCompatImageButton>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="10dp"
+                        android:layout_marginStart="30dp"
+                        app:cardCornerRadius="250dp"
+                        app:layout_gravity="end">
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/next_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@color/green"
+                            android:contentDescription="@string/button"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_next">
+                        </androidx.appcompat.widget.AppCompatImageButton>
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.gridlayout.widget.GridLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.gridlayout.widget.GridLayout>
+
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottom_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:backgroundTint="@color/white">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/morning_activity"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@color/dark_blue_opacity_2"
+                android:foregroundGravity="center"
+                android:src="@drawable/ic_sun" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/afternoon_activity"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@color/dark_blue_opacity_2"
+                android:foregroundGravity="center"
+                android:src="@drawable/ic_sunset" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/evening_activity"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@color/dark_blue_opacity_2"
+                android:foregroundGravity="center"
+                android:src="@drawable/ic_night" />
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,92 @@
+<resources>
+    <string name="app_name">Daily Not Dilly</string>
+    <string name="button">button</string>
+    <string name="seize_the_day">Ready to Seize the day?</string>
+    <string name="date">Date</string>
+    <string name="wake_up">Wake Up</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="start_routine">Start your morning routine</string>
+    <string name="ootd"> Outfit of the day </string>
+
+
+
+
+    <string-array name="quotes">
+
+        <item>Dont worry about what anybody else is going to do. The best way to
+        predict the future is to invent it.
+         </item>
+
+         <item> It is said that the real winner is the one who lives in today but able to see tomorrow.
+        </item>
+
+        <item>There really is no learning without doing.
+        </item>
+
+        <item> The best way to learn to live with our limitations is to know them.
+         </item>
+
+       <item>Everything should be made as simple as possible, but no simpler.
+        </item>
+
+        <item>The great dividing line between success and failure can be expressed in five words: I did not have time.
+        </item>
+
+        <item>He causes his sun to rise on the evil and the good, and sends rain on the righteous and the unrighteous.
+        </item>
+
+        <item>Everybody makes their own fun. If you dont make it yourself, it aint fun — its entertainment.
+        </item>
+
+        <item>Simplicity takes effort — genius, even.
+        </item>
+
+        <item> Show, dont tell.
+        </item>
+
+       <item>If you choose not to decide, you still have made a choice.
+        </item>
+
+        <item>The function of wisdom is to discriminate between good and evil.
+        </item>
+
+        <item>Life moves pretty fast. If you dont stop and look around once in a while, you could miss it.
+        </item>
+
+        <item>The direct pursuit of happiness is a recipe for an unhappy life.
+        </item>
+
+        <item>Its no trick for talented people to be interesting, but it is a gift to be interested.
+        </item>
+
+        <item>For the things we have to learn before we can do them, we learn by doing them.
+        </item>
+
+        <item>There are many ways to avoid success in life, but the most sure-fire ust might be procrastination.
+        </item>
+
+        <item>When all you have is a hammer, everything looks like a nail.
+        </item>
+
+        <item>If there is a will, there is a way.
+        </item>
+
+        <item>In terms of energy, its better to make a wrong choice than none at all.
+        </item>
+
+        <item>Courage is grace under pressure.
+        </item>
+
+        <item> Satisfaction lies in mindful repetition, the discovery of endless richness in subtle variations on familiar themes.
+        </item>
+
+        <item>Before enlightenment, chop wood and carry water. After enlightenment, chop wood and carry water.
+        </item>
+
+        <item> Whatever you can do, or dream you can, begin it. Boldness has genius, power, and magic in it.
+        </item>
+
+
+    </string-array>
+
+</resources>
