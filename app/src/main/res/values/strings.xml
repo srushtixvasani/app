@@ -5,7 +5,9 @@
     <string name="date">Date</string>
     <string name="wake_up">Wake Up</string>
     <string name="breakfast">Breakfast</string>
-    <string name="start_routine">Start your morning routine</string>
+    <string name="morning_routine">Start your morning routine</string>
+    <string name="afternoon_routine">Start your afternoon routine</string>
+    <string name="evening_routine">Start your evening routine</string>
     <string name="ootd"> Outfit of the day </string>
 
 
