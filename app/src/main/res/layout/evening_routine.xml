@@ -530,7 +530,7 @@
             android:layout_width="100dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:background="@color/dark_blue_opacity_2"
+            android:background="@color/white"
             android:foregroundGravity="center"
             android:src="@drawable/ic_sun" />
 
@@ -539,7 +539,7 @@
             android:layout_width="100dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:background="@color/dark_blue_opacity_2"
+            android:background="@color/white"
             android:foregroundGravity="center"
             android:src="@drawable/ic_sunset" />
 
@@ -548,7 +548,7 @@
             android:layout_width="100dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:background="@color/dark_blue_opacity_2"
+            android:background="@color/white"
             android:foregroundGravity="center"
             android:src="@drawable/ic_home" />
 
