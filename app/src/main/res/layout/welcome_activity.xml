@@ -4,14 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:backgroundTint="@color/white"
     android:orientation="vertical">
 
     <VideoView
         android:id="@+id/videoView"
         android:background="@color/white"
         android:layout_width="match_parent"
+        android:backgroundTint="@color/white"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
+        android:layout_gravity="center_vertical"
         >
 
     </VideoView>
