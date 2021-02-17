@@ -18,10 +18,10 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
             android:gravity="center"
-            android:padding="20dp"
+            android:paddingVertical="10dp"
             android:text="@string/seize_the_day"
             android:textColor="@color/black"
-            android:textSize="25sp"/>
+            android:textSize="40sp" />
 
 <!--        <androidx.appcompat.widget.AppCompatTextView-->
 <!--            android:id="@+id/date_textview"-->
@@ -50,31 +50,32 @@
 
 
         <androidx.gridlayout.widget.GridLayout
-            android:layout_width="330dp"
-            android:layout_height="330dp"
+            android:layout_width="360dp"
+            android:layout_height="290dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="80dp"
             >
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:backgroundTint="@color/transparent_green"
+                android:backgroundTint="@color/white"
                 app:cardCornerRadius="60dp"
                 app:cardElevation="5dp"
-                app:layout_gravity="center">
+                app:layout_gravity="center"
+                app:strokeColor="@color/green"
+                app:strokeWidth="2dp">
 
                 <TextView
                     android:id="@+id/quotes_textview"
                     android:layout_width="310dp"
                     android:layout_height="250dp"
-                    android:textAlignment="gravity"
                     android:layout_gravity="center"
+                    android:fontFamily="@font/alice"
                     android:gravity="center_vertical"
-                    android:fontFamily="sans-serif-medium"
-                    android:textColor="@color/light_blue"
-                    android:textSize="25sp">
-                </TextView>
+                    android:textAlignment="gravity"
+                    android:textColor="@color/green"
+                    android:textSize="25sp"></TextView>
 
                 <androidx.gridlayout.widget.GridLayout
                     android:layout_width="match_parent"
@@ -82,8 +83,8 @@
                     android:layout_gravity="bottom">
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_margin="10dp"
                         android:layout_marginRight="30dp"
                         app:cardElevation="5dp"
@@ -106,8 +107,8 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_margin="10dp"
                         android:layout_marginStart="30dp"
                         app:cardCornerRadius="250dp"
@@ -128,7 +129,7 @@
 
                 </androidx.gridlayout.widget.GridLayout>
 
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
         </androidx.gridlayout.widget.GridLayout>
 
@@ -141,9 +142,10 @@
               android:scrollbars="horizontal"
               android:layout_gravity="bottom"
               android:layout_marginBottom="60dp"
-              android:layout_marginStart="10dp"
-              android:layout_marginEnd="10dp"
-              android:padding="10dp">
+              android:layout_marginStart="12dp"
+              android:layout_marginEnd="12dp"
+              android:paddingHorizontal="5dp"
+              >
 
           </androidx.recyclerview.widget.RecyclerView>
 

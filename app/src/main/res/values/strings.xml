@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Daily Not Dilly</string>
     <string name="button">button</string>
-    <string name="seize_the_day">Ready to Seize the day?</string>
+    <string name="seize_the_day">Seize the day</string>
     <string name="date">Date</string>
     <string name="wake_up">Wake Up</string>
     <string name="breakfast">Breakfast</string>

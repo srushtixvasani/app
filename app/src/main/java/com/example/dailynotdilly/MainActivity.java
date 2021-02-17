@@ -1,27 +1,20 @@
 package com.example.dailynotdilly;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ActionBar;
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Adapter;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dailynotdilly.adapters.FeatureAdapter;
-import com.example.dailynotdilly.data.FeatureData;
 import com.example.dailynotdilly.models.Feature;
 import com.example.dailynotdilly.models.Quotes;
 
@@ -44,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements FeatureAdapter.Se
 
     RecyclerView recyclerView;
     List<Feature> featureList = new ArrayList<>();
-    Integer[] feature_images = {R.drawable.breathe_feature , R.drawable.journal_feature, R.drawable.manifest_feature, R.drawable.to_do_list_feature};
+    Integer[] feature_images = {R.drawable.breathe_feature , R.drawable.journal_feature, R.drawable.to_do_list_feature, R.drawable.manifest_feature};
     FeatureAdapter featureAdapter;
 
     @Override
