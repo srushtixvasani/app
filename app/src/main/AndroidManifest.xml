@@ -18,19 +18,27 @@
         </activity>
 
         <activity android:name=".MainActivity">
-
         </activity>
-        
-        <activity android:name=".MorningActivity">
 
+        <activity android:name=".MorningActivity">
         </activity>
 
         <activity android:name=".AfternoonActivity">
-
         </activity>
 
         <activity android:name=".EveningActivity">
+        </activity>
 
+        <activity android:name=".BreatheActivity">
+        </activity>
+
+        <activity android:name=".JournalActivity">
+        </activity>
+
+        <activity android:name=".ToDoListActivity">
+        </activity>
+
+        <activity android:name=".ManifestActivity">
         </activity>
 
         <meta-data
