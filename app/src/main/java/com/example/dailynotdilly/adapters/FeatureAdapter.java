@@ -11,10 +11,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dailynotdilly.AfternoonActivity;
+import com.example.dailynotdilly.BreatheActivity;
 import com.example.dailynotdilly.EveningActivity;
+import com.example.dailynotdilly.JournalActivity;
 import com.example.dailynotdilly.MainActivity;
+import com.example.dailynotdilly.ManifestActivity;
 import com.example.dailynotdilly.MorningActivity;
 import com.example.dailynotdilly.R;
+import com.example.dailynotdilly.ToDoListActivity;
 import com.example.dailynotdilly.models.Feature;
 
 import java.util.ArrayList;
@@ -71,13 +75,13 @@ public class FeatureAdapter extends
                     final Intent intent;
 
                     if (getAdapterPosition() == 0){
-                        intent = new Intent(context, MorningActivity.class);
+                        intent = new Intent(context, BreatheActivity.class);
                     } else if (getAdapterPosition() == 1){
-                        intent = new Intent(context, EveningActivity.class);
+                        intent = new Intent(context, JournalActivity.class);
                     } else if (getAdapterPosition() == 2) {
-                        intent = new Intent(context, AfternoonActivity.class);
+                        intent = new Intent(context, ToDoListActivity.class);
                     } else {
-                        intent = new Intent(context, MorningActivity.class);
+                        intent = new Intent(context, ManifestActivity.class);
                     }
 
                     context.startActivity(intent);
