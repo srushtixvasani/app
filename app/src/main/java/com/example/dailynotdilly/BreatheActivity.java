@@ -8,14 +8,22 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.appcompat.widget.AppCompatTextView;
 
+import com.github.florent37.viewanimator.AnimationListener;
 import com.github.florent37.viewanimator.ViewAnimator;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class BreatheActivity extends AppCompatActivity {
 
+    private FloatingActionButton fab;
     private ImageView breatheImage;
+    private AppCompatTextView minute;
+    private AppCompatTextView numOfBreathTaken;
+    private AppCompatTextView minsToday;
+    private MaterialButton startButton;
+    private MaterialButton stopButton;
 
     @Override
     public void onCreate( Bundle savedInstanceState) {
@@ -23,7 +31,7 @@ public class BreatheActivity extends AppCompatActivity {
         setContentView(R.layout.breathe_activity);
 
         // set floating action button to open home screen
-        FloatingActionButton fab = findViewById(R.id.fab);
+        fab = findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,24 +41,53 @@ public class BreatheActivity extends AppCompatActivity {
             }
         });
 
+        // Statistic for the user
+        minute = findViewById(R.id.minute);
+        numOfBreathTaken = findViewById(R.id.numOfBreathTaken);
+        minsToday = findViewById(R.id.minsToday);
+
+
+
+
+        // for the animation to go smaller when user inhales, larger when user exhales when start button is pressed
         breatheImage = findViewById(R.id.breatheImage);
 
-        ViewAnimator
-                .animate(breatheImage)
-                .translationY(-1000, 0)
-                .alpha(0,1)
-                .dp().translationX(-20, 0)
-                .decelerate()
-                .duration(2000)
-                .thenAnimate(breatheImage)
-                .scale(1f, 0.5f, 1f)
-                .rotation(360f)
-                .repeatCount(10)
-                .accelerate()
-                .duration(2000)
-                .start();
+        startButton = findViewById(R.id.breatheButton);
+        startButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startAnimation();
+            }
+
+        });
+
+        // to stop animation
+        stopButton = findViewById(R.id.stopBreathButton);
+        stopButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stopAnimation();
+            }
+        });
+
 
        }
+
+       private void startAnimation(){
+           ViewAnimator
+                   .animate(breatheImage)
+                   .scale(1f, 0.75f, 0.5f, 0.75f, 1f)
+                   .decelerate()
+                   .duration(7000)
+                   .repeatCount(ViewAnimator.INFINITE)
+                   .start();
+       }
+
+       private void stopAnimation(){
+            ViewAnimator.animate(breatheImage)
+                    .start().cancel();
+       }
+
 
 //    private View.OnClickListener startViewAnimation() {
 //        ImageView breatheImage = findViewById(R.id.breatheImage);
