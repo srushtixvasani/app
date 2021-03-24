@@ -18,12 +18,25 @@
         android:padding="5dp"
         android:text="@string/breathe"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/turquoise"
+        android:textColor="@color/blue_turquoise"
         android:textSize="40sp"
         android:textAllCaps="true"
         android:typeface="normal">
 
     </TextView>
+
+    <ImageButton
+        android:id="@+id/info_button"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="15dp"
+        android:background="@color/white"
+        android:src="@drawable/ic_info">
+
+    </ImageButton>
 
     <ImageView
         android:id="@+id/breatheImage"
@@ -39,13 +52,13 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="370dp"
         android:paddingHorizontal="10dp"
         android:orientation="horizontal"
         android:gravity="center">
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:cardCornerRadius="100dp"
             android:layout_gravity="center_vertical"
@@ -59,27 +72,9 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/breatheButton"
-                    android:layout_width="130dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text=" START "
-                    android:textSize="25sp"
-                    android:background="@color/transparent"
-                    android:textColor="@color/green"
-                    android:gravity="center"
-                    android:layout_gravity="center">
-
-                </com.google.android.material.button.MaterialButton>
-
-                <View
-                    android:layout_width="2dp"
-                    android:background="@color/blue"
-                    android:layout_height="50dp"/>
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/stopBreathButton"
-                    android:layout_width="130dp"
-                    android:layout_height="match_parent"
-                    android:text=" STOP "
+                    android:text="@string/start"
                     android:textSize="25sp"
                     android:background="@color/transparent"
                     android:textColor="@color/green"
@@ -105,10 +100,9 @@
         app:cardUseCompatPadding="true">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/minute"
+            android:id="@+id/lastSession"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Minutes:"
             android:textSize="20sp"
             android:textColor="@color/green"
             android:gravity="center_vertical"
@@ -133,7 +127,6 @@
             android:id="@+id/numOfBreathTaken"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Breaths taken:"
             android:textSize="20sp"
             android:textColor="@color/green"
             android:gravity="center_vertical"
@@ -157,7 +150,6 @@
             android:id="@+id/minsToday"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Minutes today:"
             android:textSize="20sp"
             android:textColor="@color/green"
             android:gravity="center_vertical"
@@ -187,7 +179,6 @@
             android:contentDescription="@string/button"
             android:src="@drawable/home_icon"
             app:layout_anchor="@id/bottomAppBar" />
-
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

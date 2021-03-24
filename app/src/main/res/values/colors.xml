@@ -2,6 +2,7 @@
 <resources>
     <color name="blue">#BFADDDCE</color>
     <color name="turquoise">#70AE98</color>
+    <color name="blue_turquoise">#27A09E</color>
     <color name="mustard_yellow">#E6B655</color>
     <color name="peach_orange">#BFDF1F23</color>
     <color name="orange">#DF1F23</color>
