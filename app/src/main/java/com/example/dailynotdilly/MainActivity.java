@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements FeatureAdapter.Se
 
     RecyclerView recyclerView;
     List<Feature> featureList = new ArrayList<>();
-    Integer[] feature_images = {R.drawable.breathe_feature , R.drawable.journal_feature, R.drawable.to_do_list_feature, R.drawable.manifest_feature};
+    Integer[] feature_images = {R.drawable.breathe_feature , R.drawable.manifest_feature, R.drawable.to_do_list_feature, R.drawable.journal_feature};
     FeatureAdapter featureAdapter;
 
     @Override

@@ -77,11 +77,11 @@ public class FeatureAdapter extends
                     if (getAdapterPosition() == 0){
                         intent = new Intent(context, BreatheActivity.class);
                     } else if (getAdapterPosition() == 1){
-                        intent = new Intent(context, JournalActivity.class);
+                        intent = new Intent(context, ManifestActivity.class);
                     } else if (getAdapterPosition() == 2) {
                         intent = new Intent(context, ToDoListActivity.class);
                     } else {
-                        intent = new Intent(context, ManifestActivity.class);
+                        intent = new Intent(context, JournalActivity.class);
                     }
 
                     context.startActivity(intent);
