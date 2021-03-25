@@ -1,6 +1,7 @@
 package com.example.dailynotdilly;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.dailynotdilly.adapters.ManifestFeatureAdapter;
 import com.example.dailynotdilly.models.ManifestFeature;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,11 +31,19 @@ public class ManifestFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.manifest_fragment, container, false);
-
         recyclerView = view.findViewById(R.id.manifest_recycler_list);
 
-        return view;
+            FloatingActionButton floatingActionButton = (FloatingActionButton) view.findViewById(R.id.floating_action_button);
+            floatingActionButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getActivity(), MainActivity.class);
+                    startActivity(intent);
+                }
+            });
+            return view;
     }
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -46,6 +56,8 @@ public class ManifestFragment extends Fragment {
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager
                 (2, StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setAdapter(manifestRecyclerViewAdapter);
+
+
 
     }
 

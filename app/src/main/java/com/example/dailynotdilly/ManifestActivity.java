@@ -1,12 +1,17 @@
 package com.example.dailynotdilly;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.dailynotdilly.models.ManifestFeature;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +33,7 @@ public class ManifestActivity extends AppCompatActivity {
             manifestFragment = new ManifestFragment();
             fragmentTransaction.add(R.id.manifest_feature, manifestFragment, TAG_LIST_FRAGMENT);
             fragmentTransaction.commit();
+
         } else {
             manifestFragment = (ManifestFragment) fragmentManager.findFragmentByTag(TAG_LIST_FRAGMENT);
         }
@@ -37,8 +43,18 @@ public class ManifestActivity extends AppCompatActivity {
         exampleManifests.add(new ManifestFeature("Dream location", "Live here", R.drawable.dream_location));
         exampleManifests.add(new ManifestFeature("Dream holiday", "Go on this holiday", R.drawable.dream_holiday));
         exampleManifests.add(new ManifestFeature("Dream car", "Buy dream car", R.drawable.dream_car));
+        exampleManifests.add(new ManifestFeature("Dream house", "Buy dream house", R.drawable.dream_house));
+        exampleManifests.add(new ManifestFeature("Dream location", "Live here", R.drawable.dream_location));
+        exampleManifests.add(new ManifestFeature("Dream holiday", "Go on this holiday", R.drawable.dream_holiday));
+        exampleManifests.add(new ManifestFeature("Dream car", "Buy dream car", R.drawable.dream_car));
+        exampleManifests.add(new ManifestFeature("Dream house", "Buy dream house", R.drawable.dream_house));
+        exampleManifests.add(new ManifestFeature("Dream location", "Live here", R.drawable.dream_location));
+        exampleManifests.add(new ManifestFeature("Dream holiday", "Go on this holiday", R.drawable.dream_holiday));
+        exampleManifests.add(new ManifestFeature("Dream car", "Buy dream car", R.drawable.dream_car));
 
         manifestFragment.setManifestFeature(exampleManifests);
+
+
     }
 
 }

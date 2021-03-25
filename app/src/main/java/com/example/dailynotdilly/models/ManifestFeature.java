@@ -1,8 +1,9 @@
 package com.example.dailynotdilly.models;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class ManifestFeature {
+public class ManifestFeature implements Serializable {
 
     private static final long serialUID = -12345678912L;
     private UUID id;
