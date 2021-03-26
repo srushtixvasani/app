@@ -16,10 +16,16 @@ import java.util.List;
 
 public class ManifestFeatureAdapter extends RecyclerView.Adapter<ManifestFeatureAdapter.ViewHolder> {
    private List<ManifestFeature> manifestFeatureList;
+   private eachRowOnClickListener listener;
 
     public ManifestFeatureAdapter(List<ManifestFeature> manifestFeatureList) {
         this.manifestFeatureList = manifestFeatureList;
     }
+
+    public void setEachRowOnClickListener(eachRowOnClickListener listener){
+        this.listener =listener;
+    }
+
 
     @NonNull
     @Override
@@ -42,7 +48,7 @@ public class ManifestFeatureAdapter extends RecyclerView.Adapter<ManifestFeature
         return manifestFeatureList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder{
 
         final View parentView;
         final ImageView manifestImageView;
@@ -50,7 +56,7 @@ public class ManifestFeatureAdapter extends RecyclerView.Adapter<ManifestFeature
 
         ManifestFeature manifestFeature;
 
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             // instantiate items above
@@ -59,6 +65,26 @@ public class ManifestFeatureAdapter extends RecyclerView.Adapter<ManifestFeature
             manifestImageView = itemView.findViewById(R.id.manifest_item_image);
 
 
+            // when user clicks each item, opens up detailed description of the manifestation
+            parentView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    if (listener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            listener.onItemClick(parentView, position);
+                        }
+                    }
+
+                }
+            });
         }
     }
+
+    // interface
+    public interface eachRowOnClickListener {
+        void onItemClick(View itemView, int position);
+    }
+
 }

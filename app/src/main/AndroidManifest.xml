@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dailynotdilly">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DailyNotDilly">
+        <activity android:name=".ManifestDetailActivity"></activity>
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,30 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity">
-        </activity>
-
-        <activity android:name=".MorningActivity">
-        </activity>
-
-        <activity android:name=".AfternoonActivity">
-        </activity>
-
-        <activity android:name=".EveningActivity">
-        </activity>
-
-        <activity android:name=".BreatheActivity">
-        </activity>
-
-        <activity android:name=".JournalActivity">
-        </activity>
-
-        <activity android:name=".ToDoListActivity">
-        </activity>
-
-        <activity android:name=".ManifestActivity">
-        </activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MorningActivity"></activity>
+        <activity android:name=".AfternoonActivity"></activity>
+        <activity android:name=".EveningActivity"></activity>
+        <activity android:name=".BreatheActivity"></activity>
+        <activity android:name=".JournalActivity"></activity>
+        <activity android:name=".ToDoListActivity"></activity>
+        <activity android:name=".ManifestActivity"></activity>
 
         <meta-data
             android:name="preloaded_fonts"

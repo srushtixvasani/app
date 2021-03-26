@@ -3,6 +3,7 @@ package com.example.dailynotdilly;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,6 +71,20 @@ public class ManifestFragment extends Fragment {
 
             }
         }
+
+        manifestRecyclerViewAdapter.setEachRowOnClickListener(new ManifestFeatureAdapter.eachRowOnClickListener() {
+            @Override
+            public void onItemClick(View itemView, int position) {
+                ManifestFeature manifestFeature = manifestList.get(position);
+
+                // test to see if onItemClick and listener works.
+//                Log.d("test", "onItemClick" + manifestFeature.getName());
+
+                Intent intent = new Intent(getContext(), ManifestDetailActivity.class);
+                intent.putExtra("manifestation", manifestFeature);
+                startActivity(intent);
+            }
+        });
 
     }
 
