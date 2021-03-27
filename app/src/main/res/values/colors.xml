@@ -16,6 +16,7 @@
     <color name="transparent_green">#D3F5CE</color>
     <color name="green_opacity">#BF7DE393</color>
     <color name="black">#000000</color>
+    <color name="black_transparent">#4D000000</color>
     <color name="grey">#666666</color>
 
 

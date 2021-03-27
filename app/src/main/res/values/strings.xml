@@ -20,6 +20,13 @@
     </string>
 
     <string name="manifest">Manifest</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="title_add">Add title</string>
+    <string name="description_add">Add description</string>
+    <string name="image_add">Add image</string>
+    <string name="image">Image</string>
+    <string name="add_manifest">Add Manifest</string>
 
 
     <string-array name="quotes">

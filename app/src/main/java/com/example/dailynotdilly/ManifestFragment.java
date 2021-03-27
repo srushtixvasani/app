@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -34,14 +35,6 @@ public class ManifestFragment extends Fragment {
         View view = inflater.inflate(R.layout.manifest_fragment, container, false);
         recyclerView = view.findViewById(R.id.manifest_recycler_list);
 
-            FloatingActionButton floatingActionButton = (FloatingActionButton) view.findViewById(R.id.floating_action_button);
-            floatingActionButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(getActivity(), MainActivity.class);
-                    startActivity(intent);
-                }
-            });
             return view;
     }
 
@@ -58,6 +51,24 @@ public class ManifestFragment extends Fragment {
                 (2, StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setAdapter(manifestRecyclerViewAdapter);
 
+        FloatingActionButton floatingActionButton = (FloatingActionButton) view.findViewById(R.id.floating_action_button);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //set add button to let user add a new manifest
+        AppCompatImageButton addButton = view.findViewById(R.id.add_manifest);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), AddManifestActivity.class);
+                startActivity(i);
+            }
+        });
 
 
     }

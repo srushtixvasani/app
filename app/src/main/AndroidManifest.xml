@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DailyNotDilly">
-        <activity android:name=".ManifestDetailActivity"></activity>
+        <activity android:name=".AddManifestActivity"></activity>
+        <activity android:name=".ManifestDetailActivity" />
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,14 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".MorningActivity"></activity>
-        <activity android:name=".AfternoonActivity"></activity>
-        <activity android:name=".EveningActivity"></activity>
-        <activity android:name=".BreatheActivity"></activity>
-        <activity android:name=".JournalActivity"></activity>
-        <activity android:name=".ToDoListActivity"></activity>
-        <activity android:name=".ManifestActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".MorningActivity" />
+        <activity android:name=".AfternoonActivity" />
+        <activity android:name=".EveningActivity" />
+        <activity android:name=".BreatheActivity" />
+        <activity android:name=".JournalActivity" />
+        <activity android:name=".ToDoListActivity" />
+        <activity android:name=".ManifestActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
