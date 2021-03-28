@@ -1,6 +1,8 @@
 package com.example.dailynotdilly;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.Gravity;
@@ -33,6 +35,7 @@ public class BreatheActivity extends AppCompatActivity {
     private MaterialButton startButton;
     private Preferences preferences;
     private ImageButton infoButton;
+
 
 
     @Override
@@ -81,6 +84,7 @@ public class BreatheActivity extends AppCompatActivity {
                 startAnimation();
             }
         });
+
        }
 
        private void startAnimation(){
@@ -143,5 +147,6 @@ public class BreatheActivity extends AppCompatActivity {
             }
         });
     }
+
 
 }

@@ -25,6 +25,7 @@
 
     </TextView>
 
+
     <ImageButton
         android:id="@+id/info_button"
         android:layout_width="55dp"
@@ -176,7 +177,6 @@
             android:layout_height="wrap_content"
             app:backgroundTint="@android:color/white"
             android:backgroundTint="@color/white"
-            android:background="@color/white"
             android:contentDescription="@string/button"
             android:src="@drawable/home_icon"
             app:layout_anchor="@id/bottomAppBar" />

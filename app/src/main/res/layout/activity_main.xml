@@ -16,12 +16,13 @@
             android:id="@+id/message_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="sans-serif-light"
+            android:textAllCaps="true"
             android:gravity="center"
             android:paddingVertical="10dp"
             android:text="@string/seize_the_day"
             android:textColor="@color/black"
-            android:textSize="40sp" />
+            android:textSize="35sp" />
 
 <!--        <androidx.appcompat.widget.AppCompatTextView-->
 <!--            android:id="@+id/date_textview"-->
@@ -71,11 +72,13 @@
                     android:layout_width="310dp"
                     android:layout_height="250dp"
                     android:layout_gravity="center"
-                    android:fontFamily="@font/alice"
+                    android:fontFamily="sans-serif-light"
                     android:gravity="center_vertical"
                     android:textAlignment="gravity"
                     android:textColor="@color/green"
-                    android:textSize="25sp"></TextView>
+                    android:textSize="25sp">
+
+                </TextView>
 
                 <androidx.gridlayout.widget.GridLayout
                     android:layout_width="match_parent"
@@ -133,22 +136,18 @@
 
         </androidx.gridlayout.widget.GridLayout>
 
-
-
           <androidx.recyclerview.widget.RecyclerView
               android:id="@+id/recycler_view"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:scrollbars="horizontal"
               android:layout_gravity="bottom"
-              android:layout_marginBottom="60dp"
+              android:layout_marginBottom="80dp"
               android:layout_marginStart="12dp"
               android:layout_marginEnd="12dp"
-              android:paddingHorizontal="5dp"
-              >
+              android:paddingHorizontal="5dp">
 
           </androidx.recyclerview.widget.RecyclerView>
-
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottom_app_bar"
@@ -173,7 +172,7 @@
                 android:layout_gravity="center"
                 android:background="@color/dark_blue_opacity_2"
                 android:foregroundGravity="center"
-                android:src="@drawable/ic_sunset" />
+                android:src="@drawable/sunset" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/evening_activity"
@@ -186,7 +185,9 @@
 
         </com.google.android.material.bottomappbar.BottomAppBar>
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </RelativeLayout>

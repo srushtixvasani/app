@@ -50,7 +50,8 @@ public class Preferences {
             amPm = "PM";
 
         String time = "Last session at " + calendar.get(Calendar.HOUR_OF_DAY) + ":" +
-                calendar.get(Calendar.MINUTE) + " " + amPm;
+                calendar.get(Calendar.MINUTE) + " " + amPm + " on " + calendar.get(Calendar.DATE) +
+                "/" + calendar.get(Calendar.MONTH) + "/" + calendar.get(Calendar.YEAR);
         return time;
     }
 

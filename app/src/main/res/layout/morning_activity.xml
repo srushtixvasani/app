@@ -541,7 +541,7 @@
             android:layout_gravity="center"
             android:background="@color/white"
             android:foregroundGravity="center"
-            android:src="@drawable/ic_sunset" />
+            android:src="@drawable/sunset" />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/evening_button"
