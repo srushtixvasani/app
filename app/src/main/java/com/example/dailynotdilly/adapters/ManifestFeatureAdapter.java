@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dailynotdilly.R;
 import com.example.dailynotdilly.models.ManifestFeature;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -39,7 +40,12 @@ public class ManifestFeatureAdapter extends RecyclerView.Adapter<ManifestFeature
 
         holder.manifestFeature = manifestFeatureList.get(position);
         holder.manifestName.setText(manifestFeatureList.get(position).getName());
-        holder.manifestImageView.setImageResource(manifestFeatureList.get(position).getImageURL());
+//        holder.manifestImageView.setImageResource(manifestFeatureList.get(position).getImageURL());
+
+        Picasso.with(holder.manifestName.getContext())
+                .load(manifestFeatureList.get(position)
+                .getImageURL()).placeholder(R.drawable.dream_car)
+                .into(holder.manifestImageView);
 
     }
 

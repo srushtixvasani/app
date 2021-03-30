@@ -1,5 +1,6 @@
 package com.example.dailynotdilly;
 
+import android.app.Application;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -9,12 +10,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStoreOwner;
 
+import com.example.dailynotdilly.data.ManifestDatabase;
 import com.example.dailynotdilly.models.ManifestFeature;
+import com.example.dailynotdilly.models.ManifestViewModel;
 import com.google.android.material.button.MaterialButton;
 
 import java.lang.ref.WeakReference;
@@ -56,6 +62,13 @@ public class AddManifestFragment extends Fragment {
             }
         });
 
+        addImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
     }
 
     //method to add manifestation to the feature
@@ -66,13 +79,12 @@ public class AddManifestFragment extends Fragment {
         if (TextUtils.isEmpty(title) && TextUtils.isEmpty(description)) {
 
         } else {
-           // ManifestFeature manifestFeature = new ManifestFeature(title, description, imageURL);
-
-            //new addManifestTask(getContext()).execute(manifestFeature);
+           ManifestFeature manifestFeature = new ManifestFeature(title, description, imageURL);
+           new addManifestTask(getContext()).execute(manifestFeature);
         }
     }
 
-    private class addManifestTask extends AsyncTask<ManifestFeature, Void, Long> {
+    private static class addManifestTask extends AsyncTask<ManifestFeature, Void, Long> {
         private final WeakReference<Context> weakRef;
 
         public addManifestTask(Context context) {
@@ -82,8 +94,25 @@ public class AddManifestFragment extends Fragment {
         @Override
         protected Long doInBackground(ManifestFeature... manifestFeatures) {
 
-            return null;
+            // invoke the database
+            ManifestDatabase db = ManifestDatabase.getInstance
+                    (weakRef.get().getApplicationContext());
+
+            return db.manifestDao().insert(manifestFeatures[0]);
         }
+
+        @Override
+        protected void onPostExecute(Long outcome) {
+            if (outcome != (long) -1) {
+                Toast.makeText(weakRef.get(), R.string.success, Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(weakRef.get(), R.string.failure, Toast.LENGTH_LONG).show();
+            }
+        }
+
+
+
+
     }
 
 

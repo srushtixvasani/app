@@ -12,11 +12,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.dailynotdilly.adapters.ManifestFeatureAdapter;
 import com.example.dailynotdilly.models.ManifestFeature;
+import com.example.dailynotdilly.models.ManifestViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -28,6 +31,21 @@ public class ManifestFragment extends Fragment {
     private RecyclerView recyclerView;
     private ManifestFeatureAdapter manifestRecyclerViewAdapter = new ManifestFeatureAdapter(manifestFeatureArrayList);
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+//        ViewModelProvider.Factory factory = new ViewModelProvider.NewInstanceFactory();
+//        ManifestViewModel manifestViewModel = new ViewModelProvider(this, factory).get(ManifestViewModel.class);
+
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        setupViewModel();
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -35,7 +53,7 @@ public class ManifestFragment extends Fragment {
         View view = inflater.inflate(R.layout.manifest_fragment, container, false);
         recyclerView = view.findViewById(R.id.manifest_recycler_list);
 
-            return view;
+        return view;
     }
 
 
@@ -73,9 +91,9 @@ public class ManifestFragment extends Fragment {
 
     }
 
-    void setManifestFeature(final List<ManifestFeature> manifestList){
+    void setManifestFeature(final List<ManifestFeature> manifestList) {
         for (ManifestFeature manifestFeature : manifestList) {
-            if(!manifestFeatureArrayList.contains(manifestFeature)) {
+            if (!manifestFeatureArrayList.contains(manifestFeature)) {
                 manifestFeatureArrayList.add(manifestFeature);
                 manifestRecyclerViewAdapter.
                         notifyItemInserted(manifestFeatureArrayList.indexOf(manifestFeature));
@@ -99,4 +117,26 @@ public class ManifestFragment extends Fragment {
 
     }
 
+    private void setupViewModel() {
+        ViewModelProvider.Factory factory = new ViewModelProvider.NewInstanceFactory();
+        ManifestViewModel manifestViewModel = new ViewModelProvider(this, factory).get(ManifestViewModel.class);
+
+        manifestViewModel.getManifests().observe(getViewLifecycleOwner(), new Observer<List<ManifestFeature>>() {
+            @Override
+            public void onChanged(List<ManifestFeature> manifestFeatures) {
+                for (ManifestFeature manifestFeature : manifestFeatures) {
+                    Log.d("TAG", "onChanged: " + manifestFeature.toString());
+
+                    manifestFeatureArrayList.add(manifestFeature);
+                    manifestRecyclerViewAdapter.notifyItemInserted(manifestFeatureArrayList.indexOf(manifestFeature));
+                }
+            }
+        });
+
+    }
+
+
+
 }
+
+

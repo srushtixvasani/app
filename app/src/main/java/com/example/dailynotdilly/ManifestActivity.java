@@ -38,21 +38,21 @@ public class ManifestActivity extends AppCompatActivity {
             manifestFragment = (ManifestFragment) fragmentManager.findFragmentByTag(TAG_LIST_FRAGMENT);
         }
 
-        exampleManifests = new ArrayList<>();
-        exampleManifests.add(new ManifestFeature("Dream house", "Buy dream house", R.drawable.evening_background));
-        exampleManifests.add(new ManifestFeature("Dream location", "Live here", R.drawable.dream_location));
-        exampleManifests.add(new ManifestFeature("Dream holiday", "Go on this holiday", R.drawable.dream_holiday));
-        exampleManifests.add(new ManifestFeature("Dream car", "Buy dream car", R.drawable.dream_car));
-        exampleManifests.add(new ManifestFeature("Dream house", "Buy dream house", R.drawable.dream_house));
-        exampleManifests.add(new ManifestFeature("Dream location", "Live here", R.drawable.dream_location));
-        exampleManifests.add(new ManifestFeature("Dream holiday", "Go on this holiday", R.drawable.dream_holiday));
-        exampleManifests.add(new ManifestFeature("Dream car", "Buy dream car", R.drawable.dream_car));
-        exampleManifests.add(new ManifestFeature("Dream house", "Buy dream house", R.drawable.dream_house));
-        exampleManifests.add(new ManifestFeature("Dream location", "Live here", R.drawable.dream_location));
-        exampleManifests.add(new ManifestFeature("Dream holiday", "Go on this holiday", R.drawable.dream_holiday));
-        exampleManifests.add(new ManifestFeature("Dream car", "Buy dream car", R.drawable.dream_car));
-
-        manifestFragment.setManifestFeature(exampleManifests);
+//        exampleManifests = new ArrayList<>();
+//        exampleManifests.add(new ManifestFeature("Dream house", "Buy dream house", R.drawable.evening_background));
+//        exampleManifests.add(new ManifestFeature("Dream location", "Live here", R.drawable.dream_location));
+//        exampleManifests.add(new ManifestFeature("Dream holiday", "Go on this holiday", R.drawable.dream_holiday));
+//        exampleManifests.add(new ManifestFeature("Dream car", "Buy dream car", R.drawable.dream_car));
+//        exampleManifests.add(new ManifestFeature("Dream house", "Buy dream house", R.drawable.dream_house));
+//        exampleManifests.add(new ManifestFeature("Dream location", "Live here", R.drawable.dream_location));
+//        exampleManifests.add(new ManifestFeature("Dream holiday", "Go on this holiday", R.drawable.dream_holiday));
+//        exampleManifests.add(new ManifestFeature("Dream car", "Buy dream car", R.drawable.dream_car));
+//        exampleManifests.add(new ManifestFeature("Dream house", "Buy dream house", R.drawable.dream_house));
+//        exampleManifests.add(new ManifestFeature("Dream location", "Live here", R.drawable.dream_location));
+//        exampleManifests.add(new ManifestFeature("Dream holiday", "Go on this holiday", R.drawable.dream_holiday));
+//        exampleManifests.add(new ManifestFeature("Dream car", "Buy dream car", R.drawable.dream_car));
+//
+//        manifestFragment.setManifestFeature(exampleManifests);
 
 
     }
