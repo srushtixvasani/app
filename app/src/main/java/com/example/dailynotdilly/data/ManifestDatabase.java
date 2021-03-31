@@ -15,7 +15,6 @@ public abstract class ManifestDatabase extends RoomDatabase {
     private static ManifestDatabase INSTANCE;
 
     public static ManifestDatabase getInstance(Context context) {
-
         if (INSTANCE == null) {
             INSTANCE = Room.databaseBuilder(
                     context.getApplicationContext(), ManifestDatabase.class,
@@ -25,7 +24,6 @@ public abstract class ManifestDatabase extends RoomDatabase {
         return INSTANCE;
     }
 
-    public abstract ManifestDao manifestDao() {}
-
+    public abstract ManifestDao manifestDao();
 
 }

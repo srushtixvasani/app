@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,9 +8,6 @@
     android:orientation="vertical"
     tools:context=".AddManifestActivity">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <com.google.android.material.card.MaterialCardView
             app:cardElevation="4dp"
@@ -26,21 +22,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/add_image_button"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingHorizontal="15dp"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:background="@drawable/rounded_button"
-                        android:backgroundTint="@color/white"
-                        android:fontFamily="sans-serif-light"
-                        android:text="@string/image_add"
-                        android:textSize="25sp"
-                        android:textColor="@color/black"
-                        >
-                    </com.google.android.material.button.MaterialButton>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/add_image_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="15dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rounded_button"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="sans-serif-light"
+                    android:text="@string/image_add"
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    >
+                </com.google.android.material.button.MaterialButton>
 
                 <ImageView
                     android:id="@+id/manifest_add_image"
@@ -170,7 +166,5 @@
             </com.google.android.material.button.MaterialButton>
 
         </com.google.android.material.card.MaterialCardView>
-
-    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

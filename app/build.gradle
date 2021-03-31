@@ -44,6 +44,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-core-utils:1.0.0'
     implementation 'com.squareup.picasso:picasso:2.4.0'
 
+
     def room_version = "2.2.6"
     implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.work:work-runtime:2.5.0"
@@ -58,6 +59,12 @@ dependencies {
     implementation 'com.github.florent37:viewanimator:1.1.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'androidx.fragment:fragment:1.2.2'
+    implementation 'androidx.lifecycle:lifecycle-process:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-service:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0'
+    annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.2.0'
 
     def lifecycle_version = "2.3.1"
     def arch_version = "2.1.0"

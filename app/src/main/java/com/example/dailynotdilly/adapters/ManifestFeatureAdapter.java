@@ -44,7 +44,7 @@ public class ManifestFeatureAdapter extends RecyclerView.Adapter<ManifestFeature
 
         Picasso.with(holder.manifestName.getContext())
                 .load(manifestFeatureList.get(position)
-                .getImageURL()).placeholder(R.drawable.dream_car)
+                .getImageURL()).placeholder(R.drawable.dream_location)
                 .into(holder.manifestImageView);
 
     }

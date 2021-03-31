@@ -58,7 +58,7 @@ public class ManifestDetailFragment extends Fragment {
 
         name.setText(manifestFeature.getName());
         description.setText(manifestFeature.getDescription());
-        image.setImageResource(manifestFeature.getImageURL());
+//        image.setImageResource(manifestFeature.getImageURL());
 
         //set back button to go back to manifest feature
         backButton.setOnClickListener(new View.OnClickListener() {

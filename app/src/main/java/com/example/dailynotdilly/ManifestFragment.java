@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.lifecycle.ViewModelProvider;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageButton;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
+
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -30,10 +32,14 @@ public class ManifestFragment extends Fragment {
     private ArrayList<ManifestFeature> manifestFeatureArrayList = new ArrayList<>();
     private RecyclerView recyclerView;
     private ManifestFeatureAdapter manifestRecyclerViewAdapter = new ManifestFeatureAdapter(manifestFeatureArrayList);
+    private ManifestViewModel manifestViewModel;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ViewModelProvider.Factory factory = new ViewModelProvider.NewInstanceFactory();
+        manifestViewModel = new ViewModelProvider(requireActivity(),getDefaultViewModelProviderFactory()).get(ManifestViewModel.class);
 
 //        ViewModelProvider.Factory factory = new ViewModelProvider.NewInstanceFactory();
 //        ManifestViewModel manifestViewModel = new ViewModelProvider(this, factory).get(ManifestViewModel.class);
@@ -101,25 +107,9 @@ public class ManifestFragment extends Fragment {
             }
         }
 
-        manifestRecyclerViewAdapter.setEachRowOnClickListener(new ManifestFeatureAdapter.eachRowOnClickListener() {
-            @Override
-            public void onItemClick(View itemView, int position) {
-                ManifestFeature manifestFeature = manifestList.get(position);
-
-                // test to see if onItemClick and listener works.
-//                Log.d("test", "onItemClick" + manifestFeature.getName());
-
-                Intent intent = new Intent(getContext(), ManifestDetailActivity.class);
-                intent.putExtra("manifestation", manifestFeature);
-                startActivity(intent);
-            }
-        });
-
     }
 
     private void setupViewModel() {
-        ViewModelProvider.Factory factory = new ViewModelProvider.NewInstanceFactory();
-        ManifestViewModel manifestViewModel = new ViewModelProvider(this, factory).get(ManifestViewModel.class);
 
         manifestViewModel.getManifests().observe(getViewLifecycleOwner(), new Observer<List<ManifestFeature>>() {
             @Override
@@ -130,6 +120,20 @@ public class ManifestFragment extends Fragment {
                     manifestFeatureArrayList.add(manifestFeature);
                     manifestRecyclerViewAdapter.notifyItemInserted(manifestFeatureArrayList.indexOf(manifestFeature));
                 }
+            }
+        });
+
+        manifestRecyclerViewAdapter.setEachRowOnClickListener(new ManifestFeatureAdapter.eachRowOnClickListener() {
+            @Override
+            public void onItemClick(View itemView, int position) {
+                ManifestFeature manifestFeature = manifestFeatureArrayList.get(position);
+
+                // test to see if onItemClick and listener works.
+//                Log.d("test", "onItemClick" + manifestFeature.getName());
+
+                Intent intent = new Intent(getContext(), ManifestDetailActivity.class);
+                intent.putExtra("manifestation", manifestFeature);
+                startActivity(intent);
             }
         });
 
