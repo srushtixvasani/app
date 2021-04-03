@@ -1,6 +1,7 @@
 package com.example.dailynotdilly;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -55,7 +56,10 @@ public class ManifestDetailFragment extends Fragment {
         ImageView image = view.findViewById(R.id.manifest_image);
         AppCompatImageButton backButton = view.findViewById(R.id.back);
 
+        String imageURL = manifestFeature.getImageURL();
+        Uri uri = Uri.parse(imageURL);
 
+        image.setImageURI(uri);
         name.setText(manifestFeature.getName());
         description.setText(manifestFeature.getDescription());
 //        image.setImageResource(manifestFeature.getImageURL());

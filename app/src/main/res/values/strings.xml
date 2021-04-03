@@ -29,6 +29,7 @@
     <string name="add_manifest">Add Manifest</string>
     <string name="success">Success</string>
     <string name="failure">Insert Failed</string>
+    <string name="set_permissions"><![CDATA[Go to Settings -> Apps and Notifications -> Daily Not Dilly\" +                     \"-> App Permissions and grant access to storage]]></string>
 
 
     <string-array name="quotes">

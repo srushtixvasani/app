@@ -11,8 +11,6 @@ public class ManifestFeature implements Serializable {
 
     private static final long serialUID = -12345678912L;
 
-
-
     @PrimaryKey(autoGenerate = true)
     private int id;
 

@@ -41,6 +41,7 @@ public class ManifestFragment extends Fragment {
         ViewModelProvider.Factory factory = new ViewModelProvider.NewInstanceFactory();
         manifestViewModel = new ViewModelProvider(requireActivity(),getDefaultViewModelProviderFactory()).get(ManifestViewModel.class);
 
+
 //        ViewModelProvider.Factory factory = new ViewModelProvider.NewInstanceFactory();
 //        ManifestViewModel manifestViewModel = new ViewModelProvider(this, factory).get(ManifestViewModel.class);
 

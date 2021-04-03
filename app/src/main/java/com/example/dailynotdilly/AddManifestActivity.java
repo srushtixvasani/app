@@ -5,11 +5,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 public class AddManifestActivity extends AppCompatActivity {
 
     public static final String TAG_ADD_FRAGMENT = "TAG_ADD_FRAGMENT";
     AddManifestFragment addManifestFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

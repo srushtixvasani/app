@@ -1,5 +1,10 @@
 package com.example.dailynotdilly.adapters;
 
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.ImageDecoder;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,15 +14,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.dailynotdilly.AddManifestFragment;
 import com.example.dailynotdilly.R;
 import com.example.dailynotdilly.models.ManifestFeature;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import static android.app.Activity.RESULT_OK;
+import static com.example.dailynotdilly.AddManifestFragment.REQUEST_CODE_IMAGE;
+
 public class ManifestFeatureAdapter extends RecyclerView.Adapter<ManifestFeatureAdapter.ViewHolder> {
    private List<ManifestFeature> manifestFeatureList;
    private eachRowOnClickListener listener;
+   AddManifestFragment addManifestFragment;
+
+   Context context;
 
     public ManifestFeatureAdapter(List<ManifestFeature> manifestFeatureList) {
         this.manifestFeatureList = manifestFeatureList;
@@ -33,6 +45,7 @@ public class ManifestFeatureAdapter extends RecyclerView.Adapter<ManifestFeature
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.manifest_list_item, parent,false);
         return new ViewHolder(view);
+
     }
 
     @Override
@@ -40,12 +53,31 @@ public class ManifestFeatureAdapter extends RecyclerView.Adapter<ManifestFeature
 
         holder.manifestFeature = manifestFeatureList.get(position);
         holder.manifestName.setText(manifestFeatureList.get(position).getName());
-//        holder.manifestImageView.setImageResource(manifestFeatureList.get(position).getImageURL());
+//
+        String imageURL = manifestFeatureList.get(position).getImageURL();
+
+//        Uri uri = Uri.parse(imageURL).normalizeScheme();
+//
+//        holder.manifestImageView.setImageURI(uri);
+      //  holder.manifestImageView.setImageURI(uri);
 
         Picasso.with(holder.manifestName.getContext())
-                .load(manifestFeatureList.get(position)
-                .getImageURL()).placeholder(R.drawable.dream_location)
+                .load(imageURL)
+                .placeholder(R.drawable.loading)
                 .into(holder.manifestImageView);
+
+        // holder.manifestImageView.im(manifestFeatureList.get(position).getImageURL());
+//        holder.manifestImageView.setImageResource(manifestFeatureList.get(position).getImageURL());
+
+//       Intent intent = Intent.parseUri();
+//        Bitmap bitmap = (Bitmap) intent.getParcelableExtra("BitmapImage");
+
+//       holder.manifestImageView.setImageBitmap(bitmap);
+
+//        Picasso.with(holder.manifestName.getContext())
+//                .load(manifestFeatureList.get(position)
+//                .getImageURL()).placeholder(R.drawable.dream_house)
+//                .into(holder.manifestImageView);
 
     }
 
