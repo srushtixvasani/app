@@ -15,8 +15,26 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.DailyNotDilly.PopupOverlay" />
+            android:background="@color/white"
+            app:popupTheme="@style/Theme.DailyNotDilly.PopupOverlay">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/yeseva_one"
+                android:gravity="center_horizontal"
+                android:text="@string/To_do"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/blue_turquoise"
+                android:textSize="40sp"
+                android:textAllCaps="true"
+                android:typeface="normal"
+                android:id="@+id/toolbar_text">
+
+            </TextView>
+        </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -30,7 +48,7 @@
 <!--        tools:ignore="ContentDescription" />-->
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+        android:id="@+id/to_do_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="60dp"
