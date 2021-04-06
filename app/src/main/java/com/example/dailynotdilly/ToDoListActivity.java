@@ -6,6 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,6 +16,7 @@ import com.example.dailynotdilly.adapters.ToDoAdapter;
 import com.example.dailynotdilly.models.Priority;
 import com.example.dailynotdilly.models.ToDoTask;
 import com.example.dailynotdilly.models.ToDoViewModel;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -28,6 +30,7 @@ public class ToDoListActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ToDoAdapter recyclerViewAdapter;
     private int counter = 1;
+    ToDoListBottomFragment bottomFragment;
 
     @Override
     public void onCreate( Bundle savedInstanceState) {
@@ -37,6 +40,11 @@ public class ToDoListActivity extends AppCompatActivity {
         //set Toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        bottomFragment = new ToDoListBottomFragment();
+        ConstraintLayout constraintLayout = findViewById(R.id.bottom_fragment);
+        BottomSheetBehavior<ConstraintLayout> bottomSheetBehavior = BottomSheetBehavior.from(constraintLayout);
+        bottomSheetBehavior.setPeekHeight(BottomSheetBehavior.STATE_HIDDEN);
 
 
         //set up recycler view
@@ -60,17 +68,22 @@ public class ToDoListActivity extends AppCompatActivity {
             recyclerViewAdapter = new ToDoAdapter(toDoTasks);
             recyclerView.setAdapter(recyclerViewAdapter);
 
-
         });
 
         //set Floating Action button
         FloatingActionButton floatingActionButton = findViewById(R.id.add_fab);
         floatingActionButton.setOnClickListener(view -> {
-            ToDoTask toDoTask = new ToDoTask("Task " + counter++ , Priority.MEDIUM, Calendar.getInstance().getTime(),
-                    Calendar.getInstance().getTime(), false);
+//            ToDoTask toDoTask = new ToDoTask("Task " + counter++ , Priority.MEDIUM, Calendar.getInstance().getTime(),
+//                    Calendar.getInstance().getTime(), false);
+//
+//            ToDoViewModel.insert(toDoTask);
 
-            ToDoViewModel.insert(toDoTask);
+            showBottomFragment();
         });
 
+    }
+
+    private void showBottomFragment() {
+        bottomFragment.show(getSupportFragmentManager(), bottomFragment.getTag());
     }
 }
