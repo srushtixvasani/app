@@ -9,6 +9,7 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class EveningActivity extends AppCompatActivity {
 
@@ -19,6 +20,10 @@ public class EveningActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.evening_routine);
+
+        // set up toolbar
+        Toolbar toolbar = findViewById(R.id.evening_toolbar);
+        setSupportActionBar(toolbar);
 
         // Opens up Home Activity
         ImageButton homeActivity = findViewById(R.id.homeActivity);
