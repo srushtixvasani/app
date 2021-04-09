@@ -96,7 +96,7 @@
         android:id="@+id/textView"
         android:layout_width="244dp"
         android:layout_height="33dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="10dp"
         android:gravity="center_horizontal"
         android:text="@string/due_date"
         android:textSize="18sp"
@@ -104,7 +104,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/priority_todo_button" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup_priority" />
 
     <CalendarView
         android:id="@+id/calendar_view"
@@ -115,6 +115,7 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/next_week_chip"
+        android:layout_marginBottom="20dp"
         app:layout_constraintVertical_bias="0.16000003" />
 
     <RadioGroup
@@ -122,6 +123,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:orientation="horizontal"
         android:padding="18dp"
         android:visibility="gone"
@@ -131,27 +133,38 @@
 
         <RadioButton
             android:id="@+id/radioButton_high"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#C91517"
-            android:text="@string/radio_high" />
+            android:background="@drawable/radio_high"
+            android:text="@string/radio_high"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/black"
+            android:textAllCaps="true"/>
 
         <RadioButton
             android:id="@+id/radioButton_med"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#FFB300"
-            android:text="@string/radio_medium" />
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/radio_med"
+            android:text="@string/radio_medium"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/black"
+            android:textAllCaps="true"
+            />
 
         <RadioButton
             android:id="@+id/radioButton_low"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@android:color/holo_blue_light"
-            android:text="@string/radio_low" />
+            android:background="@drawable/radio_low"
+            android:text="@string/radio_low"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/black"
+            android:textAllCaps="true"/>
     </RadioGroup>
 
     <androidx.constraintlayout.widget.Group

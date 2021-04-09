@@ -33,6 +33,7 @@ public class ManifestFragment extends Fragment {
     private RecyclerView recyclerView;
     private ManifestFeatureAdapter manifestRecyclerViewAdapter = new ManifestFeatureAdapter(manifestFeatureArrayList);
     private ManifestViewModel manifestViewModel;
+    private AppCompatImageButton backButton;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,7 +41,6 @@ public class ManifestFragment extends Fragment {
 
         ViewModelProvider.Factory factory = new ViewModelProvider.NewInstanceFactory();
         manifestViewModel = new ViewModelProvider(requireActivity(),getDefaultViewModelProviderFactory()).get(ManifestViewModel.class);
-
 
 //        ViewModelProvider.Factory factory = new ViewModelProvider.NewInstanceFactory();
 //        ManifestViewModel manifestViewModel = new ViewModelProvider(this, factory).get(ManifestViewModel.class);
@@ -60,6 +60,16 @@ public class ManifestFragment extends Fragment {
         View view = inflater.inflate(R.layout.manifest_fragment, container, false);
         recyclerView = view.findViewById(R.id.manifest_recycler_list);
 
+        // set up back button
+        backButton = view.findViewById(R.id.manifest_back);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), MainActivity.class);
+                startActivity(i);
+            }
+        });
+
         return view;
     }
 
@@ -76,24 +86,24 @@ public class ManifestFragment extends Fragment {
                 (2, StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setAdapter(manifestRecyclerViewAdapter);
 
-        FloatingActionButton floatingActionButton = (FloatingActionButton) view.findViewById(R.id.floating_action_button);
+        FloatingActionButton floatingActionButton = (FloatingActionButton) view.findViewById(R.id.add_manifest);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), MainActivity.class);
+                Intent intent = new Intent(getActivity(), AddManifestActivity.class);
                 startActivity(intent);
             }
         });
 
-        //set add button to let user add a new manifest
-        AppCompatImageButton addButton = view.findViewById(R.id.add_manifest);
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(), AddManifestActivity.class);
-                startActivity(i);
-            }
-        });
+//        //set add button to let user add a new manifest
+//        AppCompatImageButton addButton = view.findViewById(R.id.add_manifest);
+//        addButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(getActivity(), AddManifestActivity.class);
+//                startActivity(i);
+//            }
+//        });
 
 
     }

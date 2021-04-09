@@ -1,5 +1,7 @@
 package com.example.dailynotdilly.adapters;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,11 +40,22 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ToDoTask toDoTask = toDoList.get(position);
+        String format = Utils.formatDate(toDoTask.getDueDate());
+
+        ColorStateList colorStateList = new ColorStateList(new int[][]{
+                new int[] {-android.R.attr.state_enabled},
+                new int[] {android.R.attr.state_enabled}
+
+        }, new int[]{
+                Color.LTGRAY, // disabled state color
+                Utils.priorityColor(toDoTask)
+        });
 
         holder.toDo.setText(toDoTask.getTask());
-
-        String format = Utils.formatDate(toDoTask.getDueDate());
         holder.toDoChip.setText(format);
+        //holder.toDoChip.setTextColor(Utils.priorityColor(toDoTask));
+        holder.toDoChip.setChipIconTint(colorStateList);
+        //holder.radioButton.setButtonTintList(colorStateList);
 
 
     }
@@ -61,23 +74,24 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            radioButton = itemView.findViewById(R.id.to_do_radio_button);
+            radioButton = itemView.findViewById(R.id.to_do_radio);
             toDo = itemView.findViewById(R.id.todo_row_text);
             toDoChip = itemView.findViewById(R.id.to_do_row_chip);
             this.toDoOnClick = toDoOnClickListener;
 
             itemView.setOnClickListener(this);
+            radioButton.setOnClickListener(this);
 
         }
 
         @Override
         public void onClick(View v) {
             int id = v.getId();
-
+            ToDoTask currentTask = toDoList.get(getAdapterPosition());
             if (id == R.id.todo_row_layout) {
-                ToDoTask currentTask  = toDoList.get(getAdapterPosition());
-
-                toDoOnClick.ToDoOnClick(getAdapterPosition(), currentTask);
+                toDoOnClick.toDoOnClick(currentTask);
+            } else if (id == R.id.to_do_radio) {
+                toDoOnClick.toDoRadioButton(currentTask);
             }
         }
     }

@@ -4,5 +4,7 @@ import com.example.dailynotdilly.models.ToDoTask;
 
 public interface ToDoOnClick {
 
-    void ToDoOnClick(int pos, ToDoTask toDoTask);
+    void toDoOnClick(ToDoTask toDoTask);
+
+    void toDoRadioButton(ToDoTask toDoTask);
 }

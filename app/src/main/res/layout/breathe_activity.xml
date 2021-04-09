@@ -6,38 +6,64 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".BreatheActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="2dp"
-        android:fontFamily="@font/yeseva_one"
-        android:gravity="center_horizontal"
-        android:padding="5dp"
-        android:text="@string/breathe"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/blue_turquoise"
-        android:textSize="40sp"
-        android:textAllCaps="true"
-        android:typeface="normal">
+        android:theme="@style/Theme.DailyNotDilly.AppBarOverlay">
 
-    </TextView>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:popupTheme="@style/Theme.DailyNotDilly.PopupOverlay">
+
+<!--            <androidx.appcompat.widget.AppCompatImageButton-->
+<!--                android:id="@+id/breathe_back"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_gravity="start"-->
+<!--                android:background="@drawable/round_green_button"-->
+<!--                android:contentDescription="@string/button"-->
+<!--                android:paddingStart="8dp"-->
+<!--                android:scaleType="centerInside"-->
+<!--                android:src="@drawable/ic_back">-->
+<!--            </androidx.appcompat.widget.AppCompatImageButton>-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="@string/breathe"
+                android:fontFamily="sans-serif-medium"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/blue_turquoise"
+                android:textSize="40sp"
+                android:textAllCaps="true"
+                android:typeface="normal"
+                android:layout_marginEnd="55dp"
+                android:layout_marginStart="55dp"
+                android:id="@+id/toolbar_text">
+            </TextView>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/info_button"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_gravity="end"
+                android:background="@color/white"
+                android:contentDescription="@string/button"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_info">
+            </androidx.appcompat.widget.AppCompatImageButton>
 
 
-    <ImageButton
-        android:id="@+id/info_button"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="15dp"
-        android:background="@color/white"
-        android:src="@drawable/ic_info">
+        </androidx.appcompat.widget.Toolbar>
 
-    </ImageButton>
+    </com.google.android.material.appbar.AppBarLayout>
+
 
     <ImageView
         android:id="@+id/breatheImage"

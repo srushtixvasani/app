@@ -8,8 +8,52 @@
     android:orientation="vertical"
     tools:context=".AddManifestActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.DailyNotDilly.AppBarOverlay">
 
-        <com.google.android.material.card.MaterialCardView
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:popupTheme="@style/Theme.DailyNotDilly.PopupOverlay">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/manifest_add_back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="start"
+                android:background="@drawable/round_green_button"
+                android:contentDescription="@string/button"
+                android:paddingStart="8dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_back">
+            </androidx.appcompat.widget.AppCompatImageButton>
+
+            <TextView
+                android:id="@+id/manifest"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal"
+                android:text="@string/manifest"
+                android:fontFamily="sans-serif-medium"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/blue_turquoise"
+                android:textSize="40sp"
+                android:layout_marginEnd="50dp"
+                android:textAllCaps="true"
+                android:typeface="normal">
+            </TextView>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.card.MaterialCardView
             app:cardElevation="4dp"
             android:layout_marginTop="5dp"
             app:cardUseCompatPadding="true"

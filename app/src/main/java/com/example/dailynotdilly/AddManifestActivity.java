@@ -18,6 +18,8 @@ public class AddManifestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_manifest_activity);
 
+        // set up back button
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         addManifestFragment = new AddManifestFragment();
 

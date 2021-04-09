@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -34,8 +35,6 @@ import com.example.dailynotdilly.data.ManifestDatabase;
 import com.example.dailynotdilly.models.ManifestFeature;
 import com.example.dailynotdilly.models.ManifestViewModel;
 import com.google.android.material.button.MaterialButton;
-import com.kosalgeek.android.photoutil.GalleryPhoto;
-import com.kosalgeek.android.photoutil.ImageLoader;
 import com.squareup.picasso.Picasso;
 
 import java.io.FileNotFoundException;
@@ -57,6 +56,7 @@ public class AddManifestFragment extends Fragment {
     private static final List<String> permissions = Arrays.asList
             (Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE);
+    private AppCompatImageButton backButton;
     private MaterialButton addImage;
     private ImageView imageView;
     private String imageURL;
@@ -115,7 +115,7 @@ public class AddManifestFragment extends Fragment {
         title = view.findViewById(R.id.add_title);
         description = view.findViewById(R.id.add_description);
         addManifest = view.findViewById(R.id.add_manifest_button);
-
+        backButton = view.findViewById(R.id.manifest_add_back);
 
         return view;
     }
@@ -123,6 +123,15 @@ public class AddManifestFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), ManifestActivity.class);
+                startActivity(i);
+            }
+        });
+
         addManifest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

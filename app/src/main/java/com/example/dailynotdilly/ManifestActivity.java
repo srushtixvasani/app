@@ -33,7 +33,6 @@ public class ManifestActivity extends AppCompatActivity {
             manifestFragment = new ManifestFragment();
             fragmentTransaction.add(R.id.manifest_feature, manifestFragment, TAG_LIST_FRAGMENT);
             fragmentTransaction.commit();
-
         } else {
             manifestFragment = (ManifestFragment) fragmentManager.findFragmentByTag(TAG_LIST_FRAGMENT);
         }

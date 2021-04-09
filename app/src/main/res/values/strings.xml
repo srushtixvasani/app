@@ -10,6 +10,11 @@
     <string name="evening_routine">Start your evening routine</string>
     <string name="ootd"> Outfit of the day </string>
 
+    <string name="mRoutine"> Morning routine </string>
+    <string name="aRoutine"> Afternoon routine </string>
+    <string name="eRoutine"> Evening routine </string>
+
+
     <string name="breathe">Breathe</string>
     <string name="start">START</string>
     <string name="breathe_info_1">Meditation for at least 10 minutes everyday can increase self awareness, focus and reduce negative emotions.
@@ -40,7 +45,7 @@
     <string name="next_week">Next Week</string>
     <string name="this_weekend">This Weekend</string>
     <string name="radio_high">High</string>
-    <string name="empty_task">Empty task</string>
+    <string name="empty_task">Empty To Do</string>
     <string name="due_date">Due Date</string>
     <string name="radio_medium">Medium</string>
     <string name="radio_low">Low</string>

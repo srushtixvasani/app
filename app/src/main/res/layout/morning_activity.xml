@@ -7,17 +7,38 @@
     android:background="@color/white"
     tools:context=".MorningActivity">
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="sans-serif-medium"
-        android:gravity="center"
-        android:text="Morning Routine"
-        android:textColor="@color/black"
-        android:textSize="40sp">
+        android:theme="@style/Theme.DailyNotDilly.AppBarOverlay">
 
-    </androidx.appcompat.widget.AppCompatTextView>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:popupTheme="@style/Theme.DailyNotDilly.PopupOverlay">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="@string/mRoutine"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/black"
+                android:textSize="35sp"
+                android:layout_marginEnd="15dp"
+                android:textAllCaps="true"
+                android:typeface="normal"
+                android:id="@+id/toolbar_text">
+
+            </TextView>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
 <!--    <androidx.appcompat.widget.LinearLayoutCompat-->
 <!--        android:id="@+id/linearLayoutCompat"-->

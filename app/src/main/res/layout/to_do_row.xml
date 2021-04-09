@@ -8,7 +8,7 @@
     android:layout_marginTop="6dp">
 
     <RadioButton
-        android:id="@+id/to_do_radio_button"
+        android:id="@+id/to_do_radio"
         android:layout_width="39dp"
         android:layout_height="39dp"
         android:layout_marginStart="8dp"
@@ -25,7 +25,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/to_do_row_chip"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/to_do_radio_button"
+        app:layout_constraintStart_toEndOf="@id/to_do_radio"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.102" />
 
@@ -34,8 +34,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        app:chipStrokeColor="@color/green"
-        app:chipStrokeWidth="1.5dp"
+        app:chipStrokeColor="@color/grey"
+        app:chipStrokeWidth="1dp"
         app:chipBackgroundColor="@color/white"
         android:text="@string/today"
         android:textSize="15sp"
@@ -43,7 +43,7 @@
         app:iconStartPadding="10dp"
         app:iconEndPadding="5dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/to_do_radio_button" />
+        app:layout_constraintTop_toBottomOf="@id/to_do_radio" />
 
     <LinearLayout
         android:layout_width="match_parent"
