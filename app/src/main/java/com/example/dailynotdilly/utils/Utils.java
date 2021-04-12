@@ -22,6 +22,13 @@ public class Utils {
 
     }
 
+    public static String formatTime(Date timeSet) {
+        SimpleDateFormat simpleTimeFormat = (SimpleDateFormat) SimpleDateFormat.getTimeInstance();
+        simpleTimeFormat.applyPattern("HH:mm");
+
+        return simpleTimeFormat.format(timeSet);
+    }
+
     public static void hideKeyboard(View view) {
         InputMethodManager inputMethodManager = (InputMethodManager) view.getContext()
                 .getSystemService(Context.INPUT_METHOD_SERVICE);

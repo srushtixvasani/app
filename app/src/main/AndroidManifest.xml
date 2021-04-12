@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DailyNotDilly">
-        <activity android:name=".ToDoListBottomFragment"></activity>
+
+<!--        <activity android:name=".ToDoListBottomFragment" />-->
         <activity android:name=".AddManifestActivity" />
         <activity android:name=".ManifestDetailActivity" />
         <activity android:name=".WelcomeActivity">

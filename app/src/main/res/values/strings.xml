@@ -13,7 +13,11 @@
     <string name="mRoutine"> Morning routine </string>
     <string name="aRoutine"> Afternoon routine </string>
     <string name="eRoutine"> Evening routine </string>
-
+    <string name="eRoutine_example"> e.g, Make dinner </string>
+    <string name="set_time"> Set Time</string>
+    <string name="minute_hint">Enter a number: e.g, 20</string>
+    <string name="set_minutes"> Set Minutes</string>
+    <string name="set"> Set </string>
 
     <string name="breathe">Breathe</string>
     <string name="start">START</string>
@@ -37,7 +41,7 @@
     <string name="set_permissions"><![CDATA[Go to Settings -> Apps and Notifications -> Daily Not Dilly\" +                     \"-> App Permissions and grant access to storage]]></string>
 
 
-<!--    To do feature strings -->
+    <!--    To do feature strings -->
     <string name="To_do">TO DO</string>
     <string name="enter_todo_hint">e.g., Water the plants</string>
     <string name="today">Today</string>
@@ -130,5 +134,11 @@
 
 
     </string-array>
+    <string name="title_activity_timer">TimerActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 
 </resources>

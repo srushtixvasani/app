@@ -18,7 +18,7 @@ public class EveningRoutine {
     @ColumnInfo(name = "set_time")
     public Date timeSet;
 
-    @ColumnInfo(name = "set_minutes")
+    @ColumnInfo(name = "set_minute")
     public Date minuteSet;
 
     @ColumnInfo(name = "is_done")
@@ -57,14 +57,6 @@ public class EveningRoutine {
         this.timeSet = timeSet;
     }
 
-    public Date getMinuteSet() {
-        return minuteSet;
-    }
-
-    public void setMinuteSet(Date minuteSet) {
-        this.minuteSet = minuteSet;
-    }
-
     public boolean isDone() {
         return isDone;
     }
@@ -73,7 +65,14 @@ public class EveningRoutine {
         isDone = done;
     }
 
-    // toString if needed
+    public Date getMinuteSet() {
+        return minuteSet;
+    }
+
+    public void setMinuteSet(Date minuteSet) {
+        this.minuteSet = minuteSet;
+    }
+
     @Override
     public String toString() {
         return "EveningRoutine{" +

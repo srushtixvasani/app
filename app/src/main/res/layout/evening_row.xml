@@ -1,29 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/evening_row_item"
+    android:layout_marginTop="6dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.material.card.MaterialCardView
+<!--    <com.google.android.material.card.MaterialCardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:cardCornerRadius="20dp"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        app:strokeWidth="3dp"-->
+<!--        app:strokeColor="@color/white"-->
+<!--        app:cardUseCompatPadding="true">-->
+
+            <RadioButton
+                android:id="@+id/evening_radio"
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:layout_marginStart="8dp"
+                android:padding="0dp"
+                android:layout_gravity="center_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/evening_habit_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Dinner"
+                android:textSize="20sp"
+                android:textColor="@color/green"
+                android:gravity="center_vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/evening_time_chip"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/evening_radio"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.102">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/evening_time_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                app:chipStrokeColor="@color/grey"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@color/white"
+                android:text="11:45"
+                android:textSize="15sp"
+                app:chipIcon="@drawable/ic_clock"
+                app:iconStartPadding="10dp"
+                app:iconEndPadding="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/evening_radio" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/evening_minute_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="130dp"
+                app:chipStrokeColor="@color/grey"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@color/white"
+                android:text="20"
+                android:textSize="15sp"
+                app:chipIcon="@drawable/ic_alarm"
+                app:iconStartPadding="10dp"
+                app:iconEndPadding="5dp"
+                app:layout_constraintStart_toStartOf="@id/evening_time_chip"
+                app:layout_constraintTop_toBottomOf="@id/evening_radio" />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        app:cardCornerRadius="20dp"
-        android:backgroundTint="@color/white"
-        app:strokeWidth="3dp"
-        app:strokeColor="@color/white"
-        app:cardUseCompatPadding="true">
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:alpha="0.4"
+        android:background="@color/blue_turquoise"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/evening_time_chip">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Dinner"
-            android:textSize="25sp"
-            android:textColor="@color/green"
-            android:gravity="center_vertical"
-            android:paddingLeft="20dp">
+    </LinearLayout>
 
-        </androidx.appcompat.widget.AppCompatTextView>
-
-    </com.google.android.material.card.MaterialCardView>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

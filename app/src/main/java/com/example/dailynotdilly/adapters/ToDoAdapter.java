@@ -53,11 +53,7 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
 
         holder.toDo.setText(toDoTask.getTask());
         holder.toDoChip.setText(format);
-        //holder.toDoChip.setTextColor(Utils.priorityColor(toDoTask));
         holder.toDoChip.setChipIconTint(colorStateList);
-        //holder.radioButton.setButtonTintList(colorStateList);
-
-
     }
 
     @Override

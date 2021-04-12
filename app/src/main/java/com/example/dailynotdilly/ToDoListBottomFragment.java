@@ -97,7 +97,7 @@ public class ToDoListBottomFragment extends BottomSheetDialogFragment implements
         });
 
 
-        calendarView.setOnDateChangeListener((calendarView, year, month, dayOfMonth) -> {
+        calendarView.setOnDateChangeListener((CalendarView calendarView, int year, int month, int dayOfMonth) -> {
             calendar.clear();
             calendar.set(year, month, dayOfMonth);
 
@@ -107,12 +107,13 @@ public class ToDoListBottomFragment extends BottomSheetDialogFragment implements
             //+ dayOfMonth);
         });
 
+
+
         priorityButton.setOnClickListener(v1 -> {
             Utils.hideKeyboard(v1);
             radioGroup.setVisibility(radioGroup.getVisibility() == View.GONE ? View.VISIBLE : View.GONE);
             radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
                 if (radioGroup.getVisibility() == View.VISIBLE) {
-
                     selectedButtonId = checkedId;
                     radioButton = view.findViewById(selectedButtonId);
 
@@ -145,6 +146,7 @@ public class ToDoListBottomFragment extends BottomSheetDialogFragment implements
                     updateToDo.setDateCreated(Calendar.getInstance().getTime());
                     updateToDo.setPriority(priority);
                     updateToDo.setDueDate(dueDate);
+
                     ToDoViewModel.update(updateToDo);
                     sharedViewModel.setIsEdit(false);
                 } else {
