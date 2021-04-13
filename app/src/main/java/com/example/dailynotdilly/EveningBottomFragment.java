@@ -28,6 +28,7 @@ import com.example.dailynotdilly.utils.Utils;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.sql.Time;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -101,12 +102,12 @@ public class EveningBottomFragment extends BottomSheetDialogFragment implements 
         });
 
         minuteSetButton.setMinValue(0);
-        minuteSetButton.setMaxValue(60);
+        minuteSetButton.setMaxValue(59);
         minuteSetButton.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 calendar.clear();
-                calendar.set(0,0,0,0,newVal);
+                calendar.set(0,0,0,0, newVal);
 
                 minuteSet = calendar.getTime();
             }

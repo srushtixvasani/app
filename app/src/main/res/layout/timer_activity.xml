@@ -2,35 +2,91 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_gravity="center"
+    android:gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/timer_layout"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/transparent_white">
 
-    <TextView
-        android:id="@+id/timer_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="00:00"
-        android:textColor="@android:color/black"
-        android:textSize="60sp" />
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="750dp"
+        android:background="@color/transparent_white"
+        android:layout_gravity="center"
+        app:cardCornerRadius="50dp"
+        android:padding="10dp"
+        android:layout_marginHorizontal="20dp"
+        app:strokeWidth="3dp"
+        app:strokeColor="@color/green">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="50dp"
+            android:background="@color/transparent_white">
 
-    <Button
-        android:id="@+id/button_start_pause"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/timer_textview"
-        android:layout_centerHorizontal="true"
-        android:text="start" />
-    <Button
-        android:id="@+id/button_reset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/timer_textview"
-        android:layout_marginStart="11dp"
-        android:layout_toEndOf="@+id/button_start_pause"
-        android:text="reset"
-        android:visibility="invisible"
-        tools:visibility="visible" />
+            <TextView
+                android:id="@+id/timer_habit_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:padding="20dp"
+                android:layout_centerVertical="true"
+                android:text="HABIT"
+                android:gravity="center"
+                android:paddingBottom="50dp"
+                android:layout_above="@id/timer_textview"
+                android:textColor="@color/green"
+                android:textSize="40sp"/>
+
+            <TextView
+                android:id="@+id/timer_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="00:00"
+                android:layout_margin="20dp"
+                android:textColor="@android:color/black"
+                android:textSize="60sp" />
+
+            <Button
+                android:id="@+id/timer_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timer_textview"
+                android:textColor="@color/green"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:text="start" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/timer_pause"
+                android:layout_below="@+id/timer_start"
+                android:text="PAUSE"
+                android:padding="10dp"
+                android:layout_margin="5dp"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/green">
+
+            </Button>
+            <Button
+                android:id="@+id/timer_reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timer_pause"
+                android:text="RESET"
+                android:padding="10dp"
+                android:layout_margin="5dp"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/green" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </RelativeLayout>

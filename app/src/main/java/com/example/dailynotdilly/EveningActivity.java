@@ -136,26 +136,5 @@ public class EveningActivity extends AppCompatActivity implements EveningOnClick
     public void eveningMinuteChipOnClick(EveningRoutine eveningRoutine) {
         sharedViewModel.selectHabit(eveningRoutine);
 
-//        // inflate the layout of the info window
-//        LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-//        View infoWindow = inflater.inflate(R.layout.info_window, null);
-//
-//        // create the info window
-//        int width = LinearLayout.LayoutParams.MATCH_PARENT;
-//        int height = LinearLayout.LayoutParams.MATCH_PARENT;
-//        final PopupWindow infoPopup = new PopupWindow(infoWindow, width, height, true);
-//
-//        // shows the info window
-//        infoPopup.showAtLocation(infoWindow, Gravity.CENTER, 0, 0);
-//
-//        // dismisses the info window when clicked
-//        infoWindow.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                infoPopup.dismiss();
-//                return true;
-//            }
-//        });
-
     }
 }

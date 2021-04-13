@@ -130,7 +130,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/evening_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="580dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
         android:layout_marginTop="220dp"
         android:padding="10dp"
         android:visibility="visible"
