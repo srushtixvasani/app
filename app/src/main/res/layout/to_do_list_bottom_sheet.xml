@@ -172,6 +172,7 @@
         android:layout_width="280dp"
         android:layout_height="0dp"
         android:visibility="gone"
+        tools:visibility="visible"
         app:constraint_referenced_ids="calendar_view,next_week_chip,tomorrow_chip,today_chip,textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

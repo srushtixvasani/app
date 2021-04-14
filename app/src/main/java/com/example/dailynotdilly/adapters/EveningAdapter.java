@@ -1,6 +1,9 @@
 package com.example.dailynotdilly.adapters;
 
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.os.Build;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.Gravity;
@@ -18,11 +21,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatRadioButton;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.alexfu.countdownview.CountDownView;
 import com.example.dailynotdilly.R;
 import com.example.dailynotdilly.models.EveningRoutine;
 import com.example.dailynotdilly.utils.RoutineUtils;
 import com.google.android.material.chip.Chip;
+import com.google.android.material.snackbar.Snackbar;
 
 
 import java.text.DecimalFormat;
@@ -33,6 +36,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import static com.google.android.material.snackbar.BaseTransientBottomBar.LENGTH_LONG;
 
 
 public class EveningAdapter extends RecyclerView.Adapter<EveningAdapter.ViewHolder> {
@@ -90,6 +94,7 @@ public class EveningAdapter extends RecyclerView.Adapter<EveningAdapter.ViewHold
 //        private static final String FORMAT = "%02d:%02d:%02d";
 //        private boolean isRunning;
 
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -99,10 +104,8 @@ public class EveningAdapter extends RecyclerView.Adapter<EveningAdapter.ViewHold
             eveningMinuteChip = itemView.findViewById(R.id.evening_minute_chip);
             this.eveningOnClick = eveningOnClickListener;
 
-
             itemView.setOnClickListener(this);
             radioButton.setOnClickListener(this);
-
             eveningMinuteChip.setOnClickListener(this);
 
         }
@@ -115,6 +118,9 @@ public class EveningAdapter extends RecyclerView.Adapter<EveningAdapter.ViewHold
                 eveningOnClick.eveningHabitOnClick(currentHabit);
             } else if (id == R.id.evening_radio) {
                 eveningOnClick.eveningRadioOnClick(currentHabit);
+            } else if (id == R.id.evening_time_chip) {
+                eveningOnClick.eveningTimeChipOnClick(currentHabit);
+
             } else if (id == R.id.evening_minute_chip) {
                 eveningOnClick.eveningMinuteChipOnClick(currentHabit);
                 // inflate the layout of the info window
@@ -127,7 +133,6 @@ public class EveningAdapter extends RecyclerView.Adapter<EveningAdapter.ViewHold
 
                 // shows the info window
                 infoPopup.showAtLocation(v, Gravity.CENTER, 0, 0);
-
 
                 // dismisses the info window when clicked
                 timerWindow.setOnTouchListener(new View.OnTouchListener() {
@@ -152,14 +157,6 @@ public class EveningAdapter extends RecyclerView.Adapter<EveningAdapter.ViewHold
                 String minuteString = RoutineUtils.formatTimerMinute(currentHabit.getMinuteSet());
                 timerText.setText(minuteString);
 
-
-//                try {
-//                    setMinute = formatter.parse(minuteSet);
-//                    timeLeftInMillis = setMinute.getTime();
-//                } catch (ParseException e) {
-//                    // TODO Auto-generated catch block
-//                    e.printStackTrace();
-//                }
                 resetButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -169,7 +166,6 @@ public class EveningAdapter extends RecyclerView.Adapter<EveningAdapter.ViewHold
 
                     }
                 });
-
 
                 startButton.setOnClickListener(v1 -> {
                     SimpleDateFormat formatter = new SimpleDateFormat("mm:ss");
@@ -200,63 +196,7 @@ public class EveningAdapter extends RecyclerView.Adapter<EveningAdapter.ViewHold
 
                 });
 
-
-
-//                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("mm:ss", Locale.getDefault());
-//                Date minuteSet;
-
-//                try {
-//                    minuteSet = simpleDateFormat.parse(minuteString);
-//                    long minuteInMillis = minuteSet.getTime();
-//                } catch (ParseException e) {
-//                    e.printStackTrace();
-//                }
-
-                long minuteInMillis = currentHabit.getMinuteSet().getTime();
-
-//                startButton.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        countDownTimer = new CountDownTimer(minuteInMillis, 1000) {
-//                            @Override
-//                            public void onTick(long millisUntilFinished) {
-//                                NumberFormat f = new DecimalFormat("00");
-//                                long hour = (millisUntilFinished / 3600000) % 24;
-//                                long min = (millisUntilFinished / 60000) % 60;
-//                                long sec = (millisUntilFinished / 1000) % 60;
-//
-//                                timerText.setText(f.format(hour) + ":" +f.format(min) + ":"
-//                                        + f.format(sec));
-//                            }
-//
-//                            @Override
-//                            public void onFinish() {
-//
-//                            }
-//                        }.start();
-//                    }
-//                });
-
-
-
-//
-//                startButton.setOnClickListener(v1 -> {
-//                    countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
-//                        @Override
-//                        public void onTick(long millisUntilFinished) {
-//                        }
-//
-//                        @Override
-//                        public void onFinish() {
-//
-//                        }
-//                    }.start();
-//
-//
-//                });
-
             }
-
 
         }
     }

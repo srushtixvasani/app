@@ -6,15 +6,6 @@
     android:layout_marginTop="6dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<!--    <com.google.android.material.card.MaterialCardView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:cardCornerRadius="20dp"-->
-<!--        android:backgroundTint="@color/white"-->
-<!--        app:strokeWidth="3dp"-->
-<!--        app:strokeColor="@color/white"-->
-<!--        app:cardUseCompatPadding="true">-->
-
             <RadioButton
                 android:id="@+id/evening_radio"
                 android:layout_width="39dp"
@@ -29,7 +20,6 @@
                 android:id="@+id/evening_habit_text_view"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Dinner"
                 android:textSize="20sp"
                 android:textColor="@color/green"
                 android:gravity="center_vertical"

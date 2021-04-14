@@ -43,8 +43,6 @@ dependencies {
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
     implementation 'androidx.legacy:legacy-support-core-utils:1.0.0'
     implementation 'com.squareup.picasso:picasso:2.4.0'
-    implementation 'com.github.alexfu:CountDownView:0.1.0'
-
 
     def room_version = "2.2.6"
     implementation "androidx.room:room-runtime:$room_version"

@@ -1,18 +1,11 @@
 package com.example.dailynotdilly;
 
-import android.app.ActionBar;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
@@ -27,6 +20,7 @@ import com.example.dailynotdilly.adapters.EveningOnClick;
 import com.example.dailynotdilly.models.EveningRoutine;
 import com.example.dailynotdilly.models.EveningViewModel;
 import com.example.dailynotdilly.models.RoutineSharedViewModel;
+
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 public class EveningActivity extends AppCompatActivity implements EveningOnClick {
@@ -38,6 +32,7 @@ public class EveningActivity extends AppCompatActivity implements EveningOnClick
     private EveningAdapter recyclerViewAdapter;
     EveningBottomFragment eveningBottomFragment;
     private RoutineSharedViewModel sharedViewModel;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -111,6 +106,7 @@ public class EveningActivity extends AppCompatActivity implements EveningOnClick
         addButton.setOnClickListener(v -> {
             showEveningBottomFragment();
         });
+
     }
 
     private void showEveningBottomFragment() {
@@ -118,11 +114,11 @@ public class EveningActivity extends AppCompatActivity implements EveningOnClick
 
     }
 
-
     @Override
     public void eveningHabitOnClick(EveningRoutine eveningRoutine) {
         sharedViewModel.selectHabit(eveningRoutine);
         sharedViewModel.setIsEdit(true);
+
         showEveningBottomFragment();
     }
 
@@ -134,6 +130,12 @@ public class EveningActivity extends AppCompatActivity implements EveningOnClick
 
     @Override
     public void eveningMinuteChipOnClick(EveningRoutine eveningRoutine) {
+        sharedViewModel.selectHabit(eveningRoutine);
+
+    }
+
+    @Override
+    public void eveningTimeChipOnClick(EveningRoutine eveningRoutine) {
         sharedViewModel.selectHabit(eveningRoutine);
 
     }

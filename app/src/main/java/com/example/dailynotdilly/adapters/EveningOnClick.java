@@ -9,4 +9,6 @@ public interface EveningOnClick {
     void eveningRadioOnClick(EveningRoutine eveningRoutine);
 
     void eveningMinuteChipOnClick(EveningRoutine eveningRoutine);
+
+    void eveningTimeChipOnClick(EveningRoutine eveningRoutine);
 }
