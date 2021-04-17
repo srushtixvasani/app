@@ -19,7 +19,7 @@ import com.example.dailynotdilly.adapters.EveningAdapter;
 import com.example.dailynotdilly.adapters.EveningOnClick;
 import com.example.dailynotdilly.models.EveningRoutine;
 import com.example.dailynotdilly.models.EveningViewModel;
-import com.example.dailynotdilly.models.RoutineSharedViewModel;
+import com.example.dailynotdilly.models.EveningSharedViewModel;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
@@ -31,7 +31,7 @@ public class EveningActivity extends AppCompatActivity implements EveningOnClick
     private AppCompatImageButton addButton;
     private EveningAdapter recyclerViewAdapter;
     EveningBottomFragment eveningBottomFragment;
-    private RoutineSharedViewModel sharedViewModel;
+    private EveningSharedViewModel sharedViewModel;
 
 
     @Override
@@ -99,7 +99,7 @@ public class EveningActivity extends AppCompatActivity implements EveningOnClick
             recyclerView.setAdapter(recyclerViewAdapter);
         });
 
-        sharedViewModel = new ViewModelProvider(this).get(RoutineSharedViewModel.class);
+        sharedViewModel = new ViewModelProvider(this).get(EveningSharedViewModel.class);
 
         // set up add habit button
         addButton = findViewById(R.id.add_evening_habit);

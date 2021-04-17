@@ -16,9 +16,9 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.Group;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.dailynotdilly.models.EveningRoutine;
-import com.example.dailynotdilly.models.EveningViewModel;
-import com.example.dailynotdilly.models.EveningSharedViewModel;
+import com.example.dailynotdilly.models.MorningRoutine;
+import com.example.dailynotdilly.models.MorningSharedViewModel;
+import com.example.dailynotdilly.models.MorningViewModel;
 import com.example.dailynotdilly.utils.Utils;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.snackbar.Snackbar;
@@ -26,7 +26,7 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.Calendar;
 import java.util.Date;
 
-public class EveningBottomFragment extends BottomSheetDialogFragment implements View.OnClickListener {
+public class MorningBottomFragment extends BottomSheetDialogFragment implements View.OnClickListener {
 
     private EditText enterHabit;
     private ImageButton timeButton;
@@ -39,27 +39,28 @@ public class EveningBottomFragment extends BottomSheetDialogFragment implements 
     private Date timeSet;
     private Date minuteSet;
     Calendar calendar = Calendar.getInstance();
-    private EveningSharedViewModel sharedViewModel;
+    private MorningSharedViewModel sharedViewModel;
     private boolean isEdit;
 
-    public EveningBottomFragment() {}
+
+    public MorningBottomFragment() {}
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.morning_bottom_sheet, container, false);
 
-        View view = inflater.inflate(R.layout.evening_bottom_sheet, container, false);
-
-        timePickerGroup = view.findViewById(R.id.evening_time_group);
-        timePicker = view.findViewById(R.id.evening_time_picker);
-        timeButton = view.findViewById(R.id.evening_time_button);
-        enterHabit = view.findViewById(R.id.enter_evening_habit);
-        minutePickerGroup = view.findViewById(R.id.evening_minute_group);
-        minuteButton = view.findViewById(R.id.evening_minute_button);
-        minuteSetButton = view.findViewById(R.id.set_minute_button);
-        addHabitButton = view.findViewById(R.id.save_habit_button);
+        timePickerGroup = view.findViewById(R.id.morning_time_group);
+        timePicker = view.findViewById(R.id.morning_time_picker);
+        timeButton = view.findViewById(R.id.morning_time_button);
+        enterHabit = view.findViewById(R.id.enter_morning_habit);
+        minutePickerGroup = view.findViewById(R.id.morning_minute_group);
+        minuteButton = view.findViewById(R.id.morning_minute_button);
+        minuteSetButton = view.findViewById(R.id.set_morning_minute_button);
+        addHabitButton = view.findViewById(R.id.save_mHabit_button);
 
         return view;
+
     }
 
     @Override
@@ -68,11 +69,10 @@ public class EveningBottomFragment extends BottomSheetDialogFragment implements 
         if (sharedViewModel.getSelectedHabit().getValue() != null) {
             isEdit = sharedViewModel.getIsEdit();
 
-            EveningRoutine eveningRoutine = sharedViewModel.getSelectedHabit().getValue();
-            enterHabit.setText(eveningRoutine.getHabit());
-            Log.d("RoutineSharedViewModel", "onViewCreated: " + eveningRoutine.getHabit());
+            MorningRoutine morningRoutine = sharedViewModel.getSelectedHabit().getValue();
+            enterHabit.setText(morningRoutine.getHabit());
+            Log.d("RoutineSharedViewModel", "onViewCreated: " + morningRoutine.getHabit());
         }
-
     }
 
     @Override
@@ -116,19 +116,19 @@ public class EveningBottomFragment extends BottomSheetDialogFragment implements 
             String habit = enterHabit.getText().toString().trim();
             if (!TextUtils.isEmpty(habit) && timeSet != null) {
 
-                EveningRoutine eHabit = new EveningRoutine(habit, timeSet, minuteSet, false);
+                MorningRoutine mHabit = new MorningRoutine(habit, timeSet, minuteSet, false);
 
                 // check if user clicks to edit existing habit, then update it
                 if (isEdit) {
-                    EveningRoutine updateHabit = sharedViewModel.getSelectedHabit().getValue();
+                    MorningRoutine updateHabit = sharedViewModel.getSelectedHabit().getValue();
                     updateHabit.setHabit(habit);
                     updateHabit.setTimeSet(timeSet);
                     updateHabit.setMinuteSet(minuteSet);
 
-                    EveningViewModel.updateHabit(updateHabit);
+                    MorningViewModel.updateHabit(updateHabit);
                     sharedViewModel.setIsEdit(false);
                 } else {
-                    EveningViewModel.insertHabit(eHabit);
+                    MorningViewModel.insertHabit(mHabit);
                 }
                 enterHabit.setText("");
                 if (this.isVisible()) {
@@ -140,12 +140,11 @@ public class EveningBottomFragment extends BottomSheetDialogFragment implements 
             }
         });
 
-        sharedViewModel = new ViewModelProvider(requireActivity()).get(EveningSharedViewModel.class);
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(MorningSharedViewModel.class);
     }
 
     @Override
     public void onClick(View v) {
 
     }
-
 }

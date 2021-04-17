@@ -17,7 +17,7 @@ import androidx.appcompat.widget.AppCompatRadioButton;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dailynotdilly.R;
-import com.example.dailynotdilly.models.EveningRoutine;
+import com.example.dailynotdilly.models.MorningRoutine;
 import com.example.dailynotdilly.utils.RoutineUtils;
 import com.google.android.material.chip.Chip;
 
@@ -28,49 +28,49 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+public class MorningAdapter extends RecyclerView.Adapter<MorningAdapter.ViewHolder> {
 
-public class EveningAdapter extends RecyclerView.Adapter<EveningAdapter.ViewHolder> {
+    private final List<MorningRoutine> morningRoutineList;
+    private final MorningOnClick morningOnClickListener;
 
-    private final List<EveningRoutine> eveningRoutineList;
-    private final EveningOnClick eveningOnClickListener;
+    public MorningAdapter(List<MorningRoutine> morningRoutineList, MorningOnClick mHabitOnClickListener) {
 
-    public EveningAdapter(List<EveningRoutine> eveningRoutineList, EveningOnClick eHabitOnCLickListener) {
-
-        this.eveningRoutineList = eveningRoutineList;
-        this.eveningOnClickListener = eHabitOnCLickListener;
+        this.morningRoutineList = morningRoutineList;
+        this.morningOnClickListener = mHabitOnClickListener;
     }
+
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.evening_row, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.morning_row, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        EveningRoutine eveningRoutine = eveningRoutineList.get(position);
-        String timeFormat = RoutineUtils.formatTime(eveningRoutine.getTimeSet());
-        String minuteFormat = RoutineUtils.formatTimerMinute(eveningRoutine.getMinuteSet());
+        MorningRoutine morningRoutine = morningRoutineList.get(position);
+        String timeFormat = RoutineUtils.formatTime(morningRoutine.getTimeSet());
+        String minuteFormat = RoutineUtils.formatTimerMinute(morningRoutine.getMinuteSet());
 
         // set the layout as per the habit
-        holder.eveningHabit.setText(eveningRoutine.getHabit());
-        holder.eveningTimeChip.setText(timeFormat);
-        holder.eveningMinuteChip.setText(minuteFormat + " minutes");
+        holder.morningHabit.setText(morningRoutine.getHabit());
+        holder.morningTimeChip.setText(timeFormat);
+        holder.morningMinuteChip.setText(minuteFormat + " minutes");
 
     }
 
     @Override
     public int getItemCount() {
-        return eveningRoutineList.size();
+        return morningRoutineList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public AppCompatRadioButton radioButton;
-        public TextView eveningHabit;
-        public Chip eveningTimeChip;
-        public Chip eveningMinuteChip;
-        EveningOnClick eveningOnClick;
+        public TextView morningHabit;
+        public Chip morningTimeChip;
+        public Chip morningMinuteChip;
+        MorningOnClick morningOnClick;
 
         private TextView habitText;
         private TextView timerText;
@@ -79,34 +79,34 @@ public class EveningAdapter extends RecyclerView.Adapter<EveningAdapter.ViewHold
         private Button resetButton;
         private CountDownTimer countDownTimer;
 
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            radioButton = itemView.findViewById(R.id.evening_radio);
-            eveningHabit = itemView.findViewById(R.id.evening_habit_text_view);
-            eveningTimeChip = itemView.findViewById(R.id.evening_time_chip);
-            eveningMinuteChip = itemView.findViewById(R.id.evening_minute_chip);
-            this.eveningOnClick = eveningOnClickListener;
+            radioButton = itemView.findViewById(R.id.morning_radio);
+            morningHabit = itemView.findViewById(R.id.morning_habit_text_view);
+            morningTimeChip = itemView.findViewById(R.id.morning_time_chip);
+            morningMinuteChip = itemView.findViewById(R.id.morning_minute_chip);
+            this.morningOnClick = morningOnClickListener;
 
             itemView.setOnClickListener(this);
             radioButton.setOnClickListener(this);
-            eveningMinuteChip.setOnClickListener(this);
-
+            morningMinuteChip.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
             int id = v.getId();
-            EveningRoutine currentHabit = eveningRoutineList.get(getAdapterPosition());
-            if (id == R.id.evening_row_item) {
-                eveningOnClick.eveningHabitOnClick(currentHabit);
-            } else if (id == R.id.evening_radio) {
-                eveningOnClick.eveningRadioOnClick(currentHabit);
-            } else if (id == R.id.evening_time_chip) {
-                eveningOnClick.eveningTimeChipOnClick(currentHabit);
-            } else if (id == R.id.evening_minute_chip) {
-                eveningOnClick.eveningMinuteChipOnClick(currentHabit);
+            MorningRoutine currentHabit = morningRoutineList.get(getAdapterPosition());
+
+            if (id == R.id.morning_row_item) {
+                morningOnClick.morningHabitOnClick(currentHabit);
+            } else if ( id == R.id.morning_radio) {
+                morningOnClick.morningRadioOnClick(currentHabit);
+            } else if ( id == R.id.morning_time_chip) {
+                morningOnClick.morningTimeChipOnClick(currentHabit);
+            } else if ( id == R.id.morning_minute_chip) {
+                morningOnClick.morningMinuteChipOnClick(currentHabit);
+
                 // inflate the layout of the timer window
                 View timerWindow = LayoutInflater.from(v.getContext()).inflate(R.layout.timer_activity, null);
 

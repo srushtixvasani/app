@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class RoutineSharedViewModel extends ViewModel {
+public class EveningSharedViewModel extends ViewModel {
 
     private final MutableLiveData<EveningRoutine> selectedHabit = new MutableLiveData<>();
     private boolean isEdit;

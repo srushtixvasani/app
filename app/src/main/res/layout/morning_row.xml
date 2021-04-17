@@ -75,7 +75,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/evening_time_chip">
+        app:layout_constraintTop_toBottomOf="@+id/morning_time_chip">
 
     </LinearLayout>
 

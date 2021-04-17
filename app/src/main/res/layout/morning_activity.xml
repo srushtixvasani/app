@@ -13,7 +13,7 @@
         android:theme="@style/Theme.DailyNotDilly.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/morning_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/white"
@@ -112,7 +112,7 @@
             <androidx.appcompat.widget.AppCompatImageButton
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:id="@+id/add_evening_habit"
+                android:id="@+id/add_morning_habit"
                 app:layout_gravity="start"
                 android:layout_marginStart="10dp"
                 android:src="@drawable/ic_add"
