@@ -1,6 +1,7 @@
 package com.example.dailynotdilly;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -34,18 +35,19 @@ public class MainActivity extends AppCompatActivity implements FeatureAdapter.Se
     public Stack<Quotes> backQuotes;
     public boolean isBackQuote;
 
-
     RecyclerView recyclerView;
     List<Feature> featureList = new ArrayList<>();
-    Integer[] feature_images = {R.drawable.breathe_feature , R.drawable.manifest_feature, R.drawable.to_do_list_feature, R.drawable.journal_feature};
+    Integer[] feature_images = {R.drawable.breathe_feature , R.drawable.manifest_feature, R.drawable.to_do_list_feature, R.drawable.recipes_feature};
     FeatureAdapter featureAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+
+        // set up toolbar
+        Toolbar toolbar = findViewById(R.id.main_toolbar);
+        setSupportActionBar(toolbar);
 
         recyclerView = findViewById(R.id.recycler_view);
 
@@ -67,21 +69,12 @@ public class MainActivity extends AppCompatActivity implements FeatureAdapter.Se
         Calendar calendar = Calendar.getInstance();
         String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
 
-        // Set date to text view
-//        TextView dateTextView = findViewById(R.id.date_textview);
-//        dateTextView.setText(currentDate);
-
-        //Text Clock to get time
-        // TextClock textClock = (TextClock) findViewById(R.id.text_clock);
-
-
         // Motivational Quotes
         TextView quoteTextView = findViewById(R.id.quotes_textview);
         quoteTextView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER); //sets the text in the center
 
         ImageButton nextButton = findViewById(R.id.next_button);
         ImageButton backButton = findViewById(R.id.back_button);
-
 
         //1) import quotes from strings.xml file
         Resources res = getResources();

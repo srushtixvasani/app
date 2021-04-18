@@ -17,6 +17,7 @@
             app:cardCornerRadius="15dp"
             app:cardElevation="5dp"
             android:layout_centerHorizontal="true"
+            android:padding="10dp"
             app:cardUseCompatPadding="true"
             >
 

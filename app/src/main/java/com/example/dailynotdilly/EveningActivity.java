@@ -111,7 +111,6 @@ public class EveningActivity extends AppCompatActivity implements EveningOnClick
 
     private void showEveningBottomFragment() {
         eveningBottomFragment.show(getSupportFragmentManager(), eveningBottomFragment.getTag());
-
     }
 
     @Override

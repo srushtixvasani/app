@@ -4,10 +4,10 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class JournalActivity extends AppCompatActivity {
+public class RecipeActivity extends AppCompatActivity {
     @Override
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.journal_activity);
+        setContentView(R.layout.recipe_activity);
     }
 }

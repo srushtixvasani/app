@@ -19,7 +19,7 @@ import androidx.appcompat.widget.AppCompatRadioButton;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dailynotdilly.R;
-import com.example.dailynotdilly.models.MorningRoutine;
+import com.example.dailynotdilly.models.AfternoonRoutine;
 import com.example.dailynotdilly.utils.RoutineUtils;
 import com.google.android.material.chip.Chip;
 
@@ -30,82 +30,83 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-public class MorningAdapter extends RecyclerView.Adapter<MorningAdapter.ViewHolder> {
+public class AfternoonAdapter extends RecyclerView.Adapter<AfternoonAdapter.ViewHolder> {
 
-    private final List<MorningRoutine> morningRoutineList;
-    private final MorningOnClick morningOnClickListener;
+    private final List<AfternoonRoutine> afternoonRoutineList;
+    private final AfternoonOnClick afternoonOnClickListener;
 
-    public MorningAdapter(List<MorningRoutine> morningRoutineList, MorningOnClick mHabitOnClickListener) {
+    public AfternoonAdapter(List<AfternoonRoutine> afternoonRoutineList, AfternoonOnClick aHabitOnClickListener) {
 
-        this.morningRoutineList = morningRoutineList;
-        this.morningOnClickListener = mHabitOnClickListener;
+        this.afternoonRoutineList = afternoonRoutineList;
+        this.afternoonOnClickListener = aHabitOnClickListener;
     }
-
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.morning_row, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.afternoon_row, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        MorningRoutine morningRoutine = morningRoutineList.get(position);
-        String timeFormat = RoutineUtils.formatTime(morningRoutine.getTimeSet());
-        String minuteFormat = RoutineUtils.formatTimerMinute(morningRoutine.getMinuteSet());
+        AfternoonRoutine afternoonRoutine = afternoonRoutineList.get(position);
+        String timeFormat = RoutineUtils.formatTime(afternoonRoutine.getTimeSet());
+        String minuteFormat = RoutineUtils.formatTimerMinute(afternoonRoutine.getMinuteSet());
 
         // set the layout as per the habit
-        holder.morningHabit.setText(morningRoutine.getHabit());
-        holder.morningTimeChip.setText(timeFormat);
-        holder.morningMinuteChip.setText(minuteFormat + " minutes");
+        holder.afternoonHabit.setText(afternoonRoutine.getHabit());
+        holder.afternoonTimeChip.setText(timeFormat);
+        holder.afternoonMinuteChip.setText(minuteFormat + " minutes");
 
     }
 
     @Override
     public int getItemCount() {
-        return morningRoutineList.size();
+        return afternoonRoutineList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public AppCompatRadioButton radioButton;
-        public TextView morningHabit;
-        public Chip morningTimeChip;
-        public Chip morningMinuteChip;
-        MorningOnClick morningOnClick;
+        public TextView afternoonHabit;
+        public Chip afternoonTimeChip;
+        public Chip afternoonMinuteChip;
+        AfternoonOnClick afternoonOnClick;
 
         private TextView habitText;
         private TextView timerText;
         private Button startButton;
         private CountDownTimer countDownTimer;
 
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            radioButton = itemView.findViewById(R.id.morning_radio);
-            morningHabit = itemView.findViewById(R.id.morning_habit_text_view);
-            morningTimeChip = itemView.findViewById(R.id.morning_time_chip);
-            morningMinuteChip = itemView.findViewById(R.id.morning_minute_chip);
-            this.morningOnClick = morningOnClickListener;
+            radioButton = itemView.findViewById(R.id.afternoon_radio);
+            afternoonHabit = itemView.findViewById(R.id.afternoon_habit_text_view);
+            afternoonTimeChip = itemView.findViewById(R.id.afternoon_time_chip);
+            afternoonMinuteChip = itemView.findViewById(R.id.afternoon_minute_chip);
+            this.afternoonOnClick = afternoonOnClickListener;
+
 
             itemView.setOnClickListener(this);
             radioButton.setOnClickListener(this);
-            morningMinuteChip.setOnClickListener(this);
+            afternoonMinuteChip.setOnClickListener(this);
+
         }
 
         @Override
         public void onClick(View v) {
             int id = v.getId();
-            MorningRoutine currentHabit = morningRoutineList.get(getAdapterPosition());
-
-            if (id == R.id.morning_row_item) {
-                morningOnClick.morningHabitOnClick(currentHabit);
-            } else if ( id == R.id.morning_radio) {
-                morningOnClick.morningRadioOnClick(currentHabit);
-            } else if ( id == R.id.morning_time_chip) {
-                morningOnClick.morningTimeChipOnClick(currentHabit);
-            } else if ( id == R.id.morning_minute_chip) {
-                morningOnClick.morningMinuteChipOnClick(currentHabit);
+            AfternoonRoutine currentHabit = afternoonRoutineList.get(getAdapterPosition());
+            if (id == R.id.afternoon_row_item) {
+                afternoonOnClick.afternoonHabitOnClick(currentHabit);
+            } else if (id == R.id.afternoon_radio) {
+                afternoonOnClick.afternoonRadioOnClick(currentHabit);
+            } else if (id == R.id.afternoon_time_chip) {
+                afternoonOnClick.afternoonTimeChipOnClick(currentHabit);
+            } else if (id == R.id.afternoon_minute_chip) {
+                afternoonOnClick.afternoonMinuteChipOnClick(currentHabit);
 
                 // inflate the layout of the timer window
                 View timerWindow = LayoutInflater.from(v.getContext()).inflate(R.layout.timer_activity, null);
@@ -143,7 +144,6 @@ public class MorningAdapter extends RecyclerView.Adapter<MorningAdapter.ViewHold
                     SimpleDateFormat formatter = new SimpleDateFormat("mm:ss");
                     formatter.setLenient(false);
                     Context context = v1.getContext();
-
                     try {
                         Date minutes = formatter.parse(minuteString);
                         Long setMinutesInMillis = ( 3600000 - (-1* minutes.getTime()));
@@ -162,11 +162,11 @@ public class MorningAdapter extends RecyclerView.Adapter<MorningAdapter.ViewHold
                             // When the task is over it will print 00:00:00 there
                             public void onFinish() {
                                 timerText.setText("00:00");
-
                                 String habit_completed = habitTxt + " completed. Well done!";
 
                                 Toast.makeText(context, habit_completed, Toast.LENGTH_LONG).show();
                                 timerPopup.dismiss();
+
                             }
                         }.start();
                     } catch (ParseException e) {
@@ -176,7 +176,6 @@ public class MorningAdapter extends RecyclerView.Adapter<MorningAdapter.ViewHold
                 });
 
             }
-
         }
     }
 }

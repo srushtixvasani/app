@@ -10,18 +10,13 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.dailynotdilly.AfternoonActivity;
 import com.example.dailynotdilly.BreatheActivity;
-import com.example.dailynotdilly.EveningActivity;
-import com.example.dailynotdilly.JournalActivity;
-import com.example.dailynotdilly.MainActivity;
+import com.example.dailynotdilly.RecipeActivity;
 import com.example.dailynotdilly.ManifestActivity;
-import com.example.dailynotdilly.MorningActivity;
 import com.example.dailynotdilly.R;
 import com.example.dailynotdilly.ToDoListActivity;
 import com.example.dailynotdilly.models.Feature;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class FeatureAdapter extends
@@ -81,7 +76,7 @@ public class FeatureAdapter extends
                     } else if (getAdapterPosition() == 2) {
                         intent = new Intent(context, ToDoListActivity.class);
                     } else {
-                        intent = new Intent(context, JournalActivity.class);
+                        intent = new Intent(context, RecipeActivity.class);
                     }
 
                     context.startActivity(intent);

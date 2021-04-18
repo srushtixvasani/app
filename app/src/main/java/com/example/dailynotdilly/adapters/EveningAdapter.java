@@ -1,5 +1,6 @@
 package com.example.dailynotdilly.adapters;
 
+import android.content.Context;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.Gravity;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatRadioButton;
@@ -75,8 +77,6 @@ public class EveningAdapter extends RecyclerView.Adapter<EveningAdapter.ViewHold
         private TextView habitText;
         private TextView timerText;
         private Button startButton;
-        private Button pauseButton;
-        private Button resetButton;
         private CountDownTimer countDownTimer;
 
 
@@ -131,8 +131,6 @@ public class EveningAdapter extends RecyclerView.Adapter<EveningAdapter.ViewHold
                 habitText = timerWindow.findViewById(R.id.timer_habit_tv);
                 timerText = timerWindow.findViewById(R.id.timer_textview);
                 startButton = timerWindow.findViewById(R.id.timer_start);
-                pauseButton = timerWindow.findViewById(R.id.timer_pause);
-                resetButton = timerWindow.findViewById(R.id.timer_reset);
                 boolean isRunning;
 
                 String habitTxt = currentHabit.getHabit();
@@ -141,19 +139,11 @@ public class EveningAdapter extends RecyclerView.Adapter<EveningAdapter.ViewHold
                 String minuteString = RoutineUtils.formatTimerMinute(currentHabit.getMinuteSet());
                 timerText.setText(minuteString);
 
-                resetButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        String resetMinute = RoutineUtils.formatTimerMinute(currentHabit.getMinuteSet());
-                        timerText.setText(resetMinute);
-
-                    }
-                });
-
                 startButton.setOnClickListener(v1 -> {
                     SimpleDateFormat formatter = new SimpleDateFormat("mm:ss");
                     formatter.setLenient(false);
+                    Context context = v1.getContext();
+
                     try {
                         Date minutes = formatter.parse(minuteString);
                         Long setMinutesInMillis = ( 3600000 - (-1* minutes.getTime()));
@@ -172,6 +162,10 @@ public class EveningAdapter extends RecyclerView.Adapter<EveningAdapter.ViewHold
                             // When the task is over it will print 00:00:00 there
                             public void onFinish() {
                                 timerText.setText("00:00");
+                                String habit_completed = habitTxt + " completed. Well done!";
+
+                                Toast.makeText(context, habit_completed, Toast.LENGTH_LONG).show();
+                                timerPopup.dismiss();
                             }
                         }.start();
                     } catch (ParseException e) {

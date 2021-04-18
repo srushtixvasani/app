@@ -34,6 +34,7 @@
                 android:padding="20dp"
                 android:layout_centerVertical="true"
                 android:text="HABIT"
+                android:textAllCaps="true"
                 android:gravity="center"
                 android:paddingBottom="50dp"
                 android:layout_above="@id/timer_textview"
@@ -61,29 +62,6 @@
                 android:layout_marginTop="10dp"
                 android:layout_centerHorizontal="true"
                 android:text="start" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/timer_pause"
-                android:layout_below="@+id/timer_start"
-                android:text="PAUSE"
-                android:padding="10dp"
-                android:layout_margin="5dp"
-                android:layout_centerHorizontal="true"
-                android:textColor="@color/green">
-
-            </Button>
-            <Button
-                android:id="@+id/timer_reset"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/timer_pause"
-                android:text="RESET"
-                android:padding="10dp"
-                android:layout_margin="5dp"
-                android:layout_centerHorizontal="true"
-                android:textColor="@color/green" />
 
         </RelativeLayout>
 

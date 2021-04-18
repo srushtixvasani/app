@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Daily Not Dilly</string>
+    <string name="app_name">Do It Daily</string>
     <string name="button">button</string>
     <string name="seize_the_day">Seize the day</string>
     <string name="date">Date</string>
@@ -19,7 +19,7 @@
     <string name="set_time"> Set Time</string>
     <string name="minute_hint">Enter a number: e.g, 20</string>
     <string name="set_minutes"> Set Minutes</string>
-    <string name="habit_completed"> Habit completed! </string>
+    <string name="habit_completed">  completed. Well done!</string>
     <string name="set"> Set </string>
 
     <string name="breathe">Breathe</string>

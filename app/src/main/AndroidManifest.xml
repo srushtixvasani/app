@@ -31,7 +31,7 @@
         <activity android:name=".AfternoonActivity" />
         <activity android:name=".EveningActivity" />
         <activity android:name=".BreatheActivity" />
-        <activity android:name=".JournalActivity" />
+        <activity android:name=".RecipeActivity" />
         <activity android:name=".ToDoListActivity" />
         <activity android:name=".ManifestActivity" />
 
