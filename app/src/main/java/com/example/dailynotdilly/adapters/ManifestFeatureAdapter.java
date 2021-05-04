@@ -53,31 +53,13 @@ public class ManifestFeatureAdapter extends RecyclerView.Adapter<ManifestFeature
 
         holder.manifestFeature = manifestFeatureList.get(position);
         holder.manifestName.setText(manifestFeatureList.get(position).getName());
-//
-        String imageURL = manifestFeatureList.get(position).getImageURL();
 
-//        Uri uri = Uri.parse(imageURL).normalizeScheme();
-//
-//        holder.manifestImageView.setImageURI(uri);
-      //  holder.manifestImageView.setImageURI(uri);
+        String imageURL = manifestFeatureList.get(position).getImageURL();
 
         Picasso.with(holder.manifestName.getContext())
                 .load(imageURL)
                 .placeholder(R.drawable.loading)
                 .into(holder.manifestImageView);
-
-        // holder.manifestImageView.im(manifestFeatureList.get(position).getImageURL());
-//        holder.manifestImageView.setImageResource(manifestFeatureList.get(position).getImageURL());
-
-//       Intent intent = Intent.parseUri();
-//        Bitmap bitmap = (Bitmap) intent.getParcelableExtra("BitmapImage");
-
-//       holder.manifestImageView.setImageBitmap(bitmap);
-
-//        Picasso.with(holder.manifestName.getContext())
-//                .load(manifestFeatureList.get(position)
-//                .getImageURL()).placeholder(R.drawable.dream_house)
-//                .into(holder.manifestImageView);
 
     }
 

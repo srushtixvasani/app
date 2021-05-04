@@ -43,7 +43,6 @@
     <string name="failure">Insert Failed</string>
     <string name="set_permissions"><![CDATA[Go to Settings -> Apps and Notifications -> Daily Not Dilly\" +                     \"-> App Permissions and grant access to storage]]></string>
 
-
     <!--    To do feature strings -->
     <string name="To_do">TO DO</string>
     <string name="enter_todo_hint">e.g., Water the plants</string>
@@ -59,6 +58,17 @@
     <string name="image_description">button image</string>
     <string name="add_todos">Add a To-do…</string>
 
+    <string name="recipes"> Recipes </string>
+    <string name="search_recipes">Search for recipes</string>
+    <string name="recipe_make">What would you like to make?</string>
+    <string name="recipe_hint">e.g, Pesto pasta</string>
+    <string name="ingredients_make">Add any ingredients:</string>
+    <string name="ingredients_hint">e.g, tomato, basil, etc.</string>
+
+    <string name="morning_hint">It is best it you wake up at the same time everyday. However, to increase your productivity it is recommended to wake up around 5 AM.</string>
+    <string name="morning_hint_2"> The best time to be productive is between the hours of 9 to 11 AM.</string>
+    <string name="afternoon_hint"> Workouts between 1 to 4 PM after lunch can you an energy boost.</string>
+    <string name="evening_hint"> It is best to go to bed at the same time everyday. A session of yoga before bed can increase the quality of sleep.</string>
 
     <string-array name="quotes">
 
@@ -111,7 +121,7 @@
         <item>For the things we have to learn before we can do them, we learn by doing them.
         </item>
 
-        <item>There are many ways to avoid success in life, but the most sure-fire ust might be procrastination.
+        <item>There are many ways to avoid success in life, but the worst of them might be procrastination.
         </item>
 
         <item>When all you have is a hammer, everything looks like a nail.

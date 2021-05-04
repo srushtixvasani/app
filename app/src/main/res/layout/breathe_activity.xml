@@ -17,19 +17,6 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/white"
             app:popupTheme="@style/Theme.DailyNotDilly.PopupOverlay">
-
-<!--            <androidx.appcompat.widget.AppCompatImageButton-->
-<!--                android:id="@+id/breathe_back"-->
-<!--                android:layout_width="30dp"-->
-<!--                android:layout_height="30dp"-->
-<!--                android:layout_gravity="start"-->
-<!--                android:background="@drawable/round_green_button"-->
-<!--                android:contentDescription="@string/button"-->
-<!--                android:paddingStart="8dp"-->
-<!--                android:scaleType="centerInside"-->
-<!--                android:src="@drawable/ic_back">-->
-<!--            </androidx.appcompat.widget.AppCompatImageButton>-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

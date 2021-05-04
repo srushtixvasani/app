@@ -1,6 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RecipeActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/recipe_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.DailyNotDilly.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/recipe_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:popupTheme="@style/Theme.DailyNotDilly.PopupOverlay">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/recipe_back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="start"
+                android:background="@drawable/round_green_button"
+                android:contentDescription="@string/button"
+                android:paddingStart="8dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_back">
+            </androidx.appcompat.widget.AppCompatImageButton>
+
+            <TextView
+                android:id="@+id/recipe"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal"
+                android:text="@string/recipes"
+                android:fontFamily="sans-serif-medium"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/blue_turquoise"
+                android:textSize="40sp"
+                android:layout_marginEnd="50dp"
+                android:textAllCaps="true"
+                android:typeface="normal">
+            </TextView>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/search_recipes"
+        android:textAllCaps="true"
+        android:textSize="25sp"
+        android:textColor="@color/green"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="180dp">
+
+    </TextView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="20dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="3dp"
+        android:padding="30dp">
+
+        <LinearLayout
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="80dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="@string/recipe_make"
+                android:textSize="18sp"
+                android:textAllCaps="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/recipe_et"
+                android:layout_marginTop="10dp"
+                android:paddingVertical="10dp"
+                android:layout_marginHorizontal="10dp"
+                android:hint="@string/recipe_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </androidx.appcompat.widget.AppCompatEditText>
+
+            <TextView
+                android:layout_marginTop="100dp"
+                android:text="@string/ingredients_make"
+                android:textSize="18sp"
+                android:textAllCaps="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/ingredients_et"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="true"
+                android:layout_marginHorizontal="10dp"
+                android:hint="@string/ingredients_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </androidx.appcompat.widget.AppCompatEditText>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageButton
+        android:id="@+id/search_recipe_button"
+        android:layout_marginTop="660dp"
+        android:layout_marginHorizontal="20dp"
+        android:src="@drawable/ic_go"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="start"
+        android:background="@drawable/round_green_button"
+        android:contentDescription="@string/button"
+        android:scaleType="centerInside">
+
+    </ImageButton>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

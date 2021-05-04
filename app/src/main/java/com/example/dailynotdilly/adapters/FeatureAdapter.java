@@ -75,6 +75,8 @@ public class FeatureAdapter extends
                         intent = new Intent(context, ManifestActivity.class);
                     } else if (getAdapterPosition() == 2) {
                         intent = new Intent(context, ToDoListActivity.class);
+                    } else if (getAdapterPosition() == 3){
+                        intent = new Intent(context, RecipeActivity.class);
                     } else {
                         intent = new Intent(context, RecipeActivity.class);
                     }
